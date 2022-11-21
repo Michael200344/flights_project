@@ -13,7 +13,7 @@ Output: populates: Vector of each flight with input IATA as source, vector of ea
 */
 
 void dataSimplification(std::vector<std::string> IATAs){
-
+    
 
     
 }
