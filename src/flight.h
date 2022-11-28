@@ -7,9 +7,9 @@ class Flight {
     
 
     private:
-    string source;
-    string destination;
-    string airline;
+    std::string source;
+    std::string destination;
+    std::string airline;
     float distance;
 
 };
