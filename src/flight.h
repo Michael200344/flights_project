@@ -2,14 +2,17 @@
 
 #include <string>
 
+using namespace std;
+
 class Flight {
     public:
-    
+    Flight();
+    Flight(string start, string dest, string aline, float dist);
 
     private:
-    std::string source;
-    std::string destination;
-    std::string airline;
+    string source;
+    string destination;
+    string airline;
     float distance;
 
 };
