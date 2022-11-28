@@ -3,12 +3,9 @@
 #include <map>
 #include <string>
 
-using namespace std;
+#include "utils.h"
+#include "adjacency_list.h"
+#include "airport.h"
+#include "flight.h"
 
-class Graph {
-    public:
 
-    private:
-        map<string,  adjacency;
-
-};

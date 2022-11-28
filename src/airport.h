@@ -9,7 +9,7 @@ class Airport {
     
 
     private:
-    string IATA;
-    vector<Flight> flights;
+    std::string IATA;
+    std::vector<Flight> flights;
 
 };
