@@ -11,6 +11,6 @@ bin/exec: ./main.cpp
 .DEFAULT_GOAL := exec
 .PHONY: clean exec 
 
-
+//hello
 clean:
 	rm -fr bin/* obj/*
