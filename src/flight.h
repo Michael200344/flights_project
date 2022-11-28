@@ -15,4 +15,5 @@ class Flight {
     string airline;
     float distance;
 
+
 };
