@@ -7,13 +7,13 @@ using namespace std;
 class Flight {
     public:
     Flight();
-    Flight(string start, string dest, string aline, float dist);
+    Flight(string source, string destination,float distance);
 
     private:
-    string source;
-    string destination;
-    string airline;
-    float distance;
+    string source_;
+    string destination_;
+    string airline_;
+    float distance_;
 
 
 };

@@ -12,9 +12,9 @@ class Airport {
         Airport(const std::string IATA);
 
 
-        std::vector<Flight> flights; // moved from private, not sure if this is correct
+        std::vector<Flight> flights_; // moved from private, not sure if this is correct
     
-    Airport(string iata, vector<Flight> connections);
+    Airport(string IATA, vector<Flight> flights);
 
 
     private:

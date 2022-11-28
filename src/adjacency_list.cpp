@@ -17,7 +17,7 @@ AdjList::AdjList(const std::string &filename){
         Airport *currAirport = new Airport(Trim(elems[0])); // creates a new airport for each IATA - unordered set checks for duplicates
         Flight *currFlight = new Flight(Trim(elems[0]), Trim(elems[1]), std::stof(Trim(elems[2]))); // new flight with source, dest, and distance as float
 
-        currAirport->flights.push_back(*currFlight); // adds current flight to current airports flights vector
+        currAirport->flights_.push_back(*currFlight); // adds current flight to current airports flights vector
 
         list.insert(*currAirport); // inserts airport into adjacency list if it inst there
 

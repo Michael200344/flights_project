@@ -5,7 +5,7 @@ Airport::Airport(){
     IATA_ = "";
 }
 
-Airport::Airport(string iata, vector<Flight> connections) {
-    IATA = iata;
-    flights = connections;
+Airport::Airport(string IATA, vector<Flight> flights) {
+    IATA_ = IATA;
+    flights_ = flights;
 }
