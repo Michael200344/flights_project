@@ -4,6 +4,8 @@
 #include <vector>
 #include "flight.h"
 
+using namespace std;
+
 class Airport {
     public:
         Airport();
@@ -11,9 +13,11 @@ class Airport {
 
 
         std::vector<Flight> flights; // moved from private, not sure if this is correct
+    
+    Airport(string iata, vector<Flight> connections);
+
 
     private:
         std::string IATA_;
         
-
 };

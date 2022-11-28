@@ -2,15 +2,18 @@
 
 #include <string>
 
+using namespace std;
+
 class Flight {
     public:
-        Flight(const std::string source, const std::string destination, const float distance);   
-
+    Flight();
+    Flight(string start, string dest, string aline, float dist);
 
     private:
-        std::string source_;
-        std::string destination_;
-        std::string airline_;
-        float distance_;
+    string source;
+    string destination;
+    string airline;
+    float distance;
+
 
 };

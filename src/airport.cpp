@@ -1,9 +1,11 @@
 #include "airport.h"
 
+
 Airport::Airport(){
     IATA_ = "";
 }
 
-Airport::Airport(const std::string IATA){
-    IATA_ = IATA;
+Airport::Airport(string iata, vector<Flight> connections) {
+    IATA = iata;
+    flights = connections;
 }
