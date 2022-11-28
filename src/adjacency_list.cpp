@@ -2,7 +2,7 @@
 
 AdjList::AdjList(){}
 
-AdjList::AdjList(const std::string &filename){
+AdjList::AdjList(const std::string &filename) {
 
     std::string filestring = file_to_string(filename); // converting file into usable string format
 
