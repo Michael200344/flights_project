@@ -6,10 +6,14 @@
 
 class Airport {
     public:
-    
+        Airport();
+        Airport(const std::string IATA);
+
+
+        std::vector<Flight> flights; // moved from private, not sure if this is correct
 
     private:
-    std::string IATA;
-    std::vector<Flight> flights;
+        std::string IATA_;
+        
 
 };
