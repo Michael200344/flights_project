@@ -2,7 +2,7 @@
 
 AdjList::AdjList(const std::string &filename) {
 
-    list.clear();
+    list_.clear();
 
     std::string filestring = file_to_string(filename); // converting file into usable string format
 
@@ -15,12 +15,40 @@ AdjList::AdjList(const std::string &filename) {
         int rv2 = SplitString(lines[i], ',', elems); // splits each line by commas, stores result in elems
 
         Airport *currAirport = new Airport(Trim(elems[0])); // creates a new airport for each IATA - unordered set checks for duplicates
+        IATAmap_.insert({Trim(elems[0]), *currAirport}); // links IATA with airport - should resolve time issues later
         Flight *currFlight = new Flight(Trim(elems[0]), Trim(elems[1]), std::stof(Trim(elems[2]))); // new flight with source, dest, and distance as float
 
-        currAirport->flights_.push_back(*currFlight); // adds current flight to current airports flights vector
+        currAirport->getFlights()->push_back(*currFlight); // adds current flight to current airports flights vector
 
-        list.insert(*currAirport); // inserts airport into adjacency list if it inst there
+        list_.insert(*currAirport); // inserts airport into adjacency list if it inst there
 
     }
     
+}
+
+std::unordered_set<Airport> AdjList::getList(){
+
+    return list_;
+
+}
+
+std::unordered_map<std::string, Airport> AdjList::getMap(){
+
+    return IATAmap_;
+
+}
+
+Airport* AdjList::findAirport(std::string IATA){
+
+    for(Airport a : list_){
+
+        if(a.getIATA() == IATA){
+            return &a;
+        }
+
+    }
+
+    Airport* error = new Airport("XXX"); // if XXX appears, found an airport not in adjlist which should be impossible
+    return error;
+
 }
