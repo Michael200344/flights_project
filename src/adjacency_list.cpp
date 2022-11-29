@@ -1,6 +1,6 @@
 #include "adjacency_list.h"
 
-AdjList::AdjList(const std::string &filename){
+AdjList::AdjList(const std::string &filename) {
 
     list.clear();
 
