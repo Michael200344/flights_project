@@ -8,7 +8,7 @@
 class AdjList {
 
     public:
-        AdjList();
+
         AdjList(const std::string &filename);
 
     private:

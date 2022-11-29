@@ -1,13 +1,13 @@
 #include "adjacency_list.h"
 
-AdjList::AdjList(){}
-
 AdjList::AdjList(const std::string &filename){
+
+    list.clear();
 
     std::string filestring = file_to_string(filename); // converting file into usable string format
 
     std::vector<std::string> lines; // initializing vector to save the result of split string
-    int rv = SplitString(filestring, '/n', lines); // splitting filestring by newline so that each line is in its own index of lines
+    int rv = SplitString(filestring, '\n', lines); // splitting filestring by newline so that each line is in its own index of lines
 
     for(size_t i = 0; i < lines.size(); i++){ // loops through each line in lines vector
 
@@ -23,5 +23,4 @@ AdjList::AdjList(const std::string &filename){
 
     }
     
-
 }
