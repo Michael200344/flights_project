@@ -8,16 +8,22 @@ using namespace std;
 
 class Airport {
     public:
+
         Airport();
         Airport(const std::string IATA);
+        Airport(const string IATA, const vector<Flight> flights);
 
+        std::vector<Flight>* getFlights();
+        void setVisited();
+        void setNotVisited();
 
-        std::vector<Flight> flights_; // moved from private, not sure if this is correct
-    
-    Airport(string IATA, vector<Flight> flights);
-
+        bool getVisited();
+        std::string getIATA();
 
     private:
-        std::string IATA_;
+
+        std::vector<Flight> flights_; // moved from private, not sure if this is correct
+        std::string IATA_; // each airport has a code
+        bool visited_; // used in BFS to determine if vertex has been visited
         
 };
