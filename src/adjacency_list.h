@@ -1,8 +1,7 @@
-#pragma once
+#include "utils.h"
 #include <vector>
 #include "airport.h"
 #include "flight.h"
-#include "utils.h"
 #include <unordered_set>
 
 class AdjList {
