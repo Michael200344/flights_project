@@ -1,5 +1,11 @@
 #include "flight.h"
 
+Flight::Flight(){
+
+    type_ = 'u';
+
+}
+
 Flight::Flight(const std::string source, const std::string destination, const float distance){
 
     source_ = source;
