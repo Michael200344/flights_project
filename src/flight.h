@@ -2,17 +2,23 @@
 
 #include <string>
 
-using namespace std;
-
 class Flight {
     public:
-    Flight();
-    Flight(string start, string dest, string aline, float dist);
+
+        Flight();
+        Flight(std::string source, std::string destination, float distance);
+
+        void setType(char t);
+        std::string getDestination();
+        std::string getSource();
 
     private:
-    string source;
-    string destination;
-    string airline;
-    float distance;
+    
+        std::string source_;
+        std::string destination_;
+        std::string airline_;
+        char type_; // will be used in bfs - u = unexplored, d = discovery, c = cross
+        float distance_;
+
 
 };

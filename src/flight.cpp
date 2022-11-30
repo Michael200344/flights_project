@@ -1,8 +1,27 @@
 #include "flight.h"
 
-Flight::Flight(string start, string dest, string aline, float dist) {
-    source = start;
-    destination = dest;
-    airline = aline;
-    distance = dist;
+Flight::Flight(const std::string source, const std::string destination, const float distance){
+
+    source_ = source;
+    destination_ = destination;
+    distance_ = distance;
+
+}
+
+void Flight::setType(char t){
+
+    type_ = t;
+
+}
+
+std::string Flight::getDestination(){
+
+    return destination_;
+
+}
+
+std::string Flight::getSource(){
+
+    return source_;
+
 }
