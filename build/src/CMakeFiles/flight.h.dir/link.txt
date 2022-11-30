@@ -1,0 +1,2 @@
+/usr/bin/ar qc libflight.h.a CMakeFiles/flight.h.dir/adjacency_list.cpp.o CMakeFiles/flight.h.dir/airport.cpp.o CMakeFiles/flight.h.dir/bfs.cpp.o CMakeFiles/flight.h.dir/flight.cpp.o CMakeFiles/flight.h.dir/utils.cpp.o
+/usr/bin/ranlib libflight.h.a

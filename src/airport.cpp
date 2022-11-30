@@ -17,7 +17,7 @@ Airport::Airport(const std::string IATA){
 Airport::Airport(const string IATA, const vector<Flight> flights) {
     
     IATA_ = IATA;
-    flights_ = flights;
+    flights_ = flights; // deep copy vector
     visited_ = false;
 
 }
@@ -29,7 +29,7 @@ Airport::Airport(const string IATA, const vector<Flight> flights) {
 
 // }
 
-std::vector<Flight>* Airport::getFlights() const{
+std::vector<Flight>* Airport::getFlights(){
 
     return &flights_;
 

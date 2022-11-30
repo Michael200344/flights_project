@@ -1,12 +1,11 @@
-#include "adjacency_list.h"
-#include <queue>
-#include <iostream>
+#include "bfs.h"
+
 
 /*
     This BFS function will take in our adjacency list and mark each flight as discovery or cross 
 */
 
-void BFS(AdjList &adjlist){
+BFS::BFS(AdjList &adjlist){
 
     auto list = adjlist.getList();
     // Iterator beg = list.begin();
@@ -33,7 +32,7 @@ void BFS(AdjList &adjlist){
 
 }
 
-void BFS(AdjList &adjlist, Airport start){
+BFS::BFS(AdjList &adjlist, Airport start){
 
     std::queue<Airport> q;
     start.setVisited(); // initializing queue, marking start as visited, and pushing it
@@ -45,7 +44,7 @@ void BFS(AdjList &adjlist, Airport start){
         q.pop();
 
         std::vector<Flight> currFlights = *(currAirport.getFlights());  // gets current flights
-        std::unordered_map<std::string, Airport> currMap = adjlist.getMap();
+        std::map<std::string, Airport> currMap = adjlist.getMap();
 
         for(Flight f : currFlights){
 

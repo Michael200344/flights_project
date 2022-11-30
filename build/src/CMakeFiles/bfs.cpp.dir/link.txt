@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbfs.cpp.a CMakeFiles/bfs.cpp.dir/adjacency_list.cpp.o CMakeFiles/bfs.cpp.dir/airport.cpp.o CMakeFiles/bfs.cpp.dir/bfs.cpp.o CMakeFiles/bfs.cpp.dir/flight.cpp.o CMakeFiles/bfs.cpp.dir/utils.cpp.o
+/usr/bin/ranlib libbfs.cpp.a
