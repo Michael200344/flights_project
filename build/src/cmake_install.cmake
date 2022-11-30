@@ -1,4 +1,4 @@
-# Install script for directory: /workspaces/cs225/release-f22/final_project/flights_project/src
+# Install script for directory: /workspaces/CS 225/final_project/flights_project/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-# Install script for directory: /workspaces/cs225/release-f22/final_project/flights_project
+# Install script for directory: /workspaces/CS 225/final_project/flights_project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/workspaces/cs225/release-f22/final_project/flights_project/build/src/cmake_install.cmake")
+  include("/workspaces/CS 225/final_project/flights_project/build/lib/cmake_install.cmake")
+  include("/workspaces/CS 225/final_project/flights_project/build/src/cmake_install.cmake")
 
 endif()
 
@@ -56,5 +57,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/workspaces/cs225/release-f22/final_project/flights_project/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/workspaces/CS 225/final_project/flights_project/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

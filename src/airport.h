@@ -13,12 +13,14 @@ class Airport {
         Airport(const std::string IATA);
         Airport(const string IATA, const vector<Flight> flights);
 
+        // bool operator==(const Airport a1);
+
         std::vector<Flight>* getFlights();
         void setVisited();
         void setNotVisited();
 
-        bool getVisited();
-        std::string getIATA();
+        bool getVisited() const;
+        std::string getIATA() const;
 
     private:
 

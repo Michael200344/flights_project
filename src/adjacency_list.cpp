@@ -1,4 +1,14 @@
 #include "adjacency_list.h"
+#include <unordered_set>
+
+// struct AirportEqual {
+//     bool operator()(const Airport & a1, const Airport & a2) {
+//         if (a1.getIATA() == a2.getIATA())
+//             return true;
+//         else
+//             return false;
+//     }
+// };
 
 AdjList::AdjList(const std::string &filename) {
 
@@ -13,42 +23,48 @@ AdjList::AdjList(const std::string &filename) {
 
         std::vector<std::string> elems;
         int rv2 = SplitString(lines[i], ',', elems); // splits each line by commas, stores result in elems
+        
+        if(IATAlist_.count(Trim(elems[0])) == 0){
 
-        Airport *currAirport = new Airport(Trim(elems[0])); // creates a new airport for each IATA - unordered set checks for duplicates
-        IATAmap_.insert({Trim(elems[0]), *currAirport}); // links IATA with airport - should resolve time issues later
-        Flight *currFlight = new Flight(Trim(elems[0]), Trim(elems[1]), std::stof(Trim(elems[2]))); // new flight with source, dest, and distance as float
+            IATAlist_.insert(Trim(elems[0]));
+            Airport *currAirport = new Airport(Trim(elems[0])); // creates a new airport for each IATA - unordered set checks for duplicates
+            IATAmap_.insert({Trim(elems[0]), *currAirport}); // links IATA with airport - should resolve time issues later
 
-        currAirport->getFlights()->push_back(*currFlight); // adds current flight to current airports flights vector
+        }
+       
+        // Airport currAirport = IATAmap_[Trim(elems[0])];
+        
+        // Flight *currFlight = new Flight(Trim(elems[0]), Trim(elems[1]), std::stof(Trim(elems[2]))); // new flight with source, dest, and distance as float
 
-        list_.insert(*currAirport); // inserts airport into adjacency list if it inst there
+        // currAirport.getFlights()->push_back(*currFlight); // adds current flight to current airports flights vector
 
     }
     
 }
 
-std::unordered_set<Airport> AdjList::getList() const{
+std::set<Airport> AdjList::getList() const{
 
     return list_;
 
 }
 
-std::unordered_map<std::string, Airport> AdjList::getMap() const{
+std::map<std::string, Airport> AdjList::getMap() const{
 
     return IATAmap_;
 
 }
 
-Airport* AdjList::findAirport(std::string IATA) const{
+Airport AdjList::findAirport(std::string IATA) const{
 
     for(Airport a : list_){
 
         if(a.getIATA() == IATA){
-            return &a;
+            return a;
         }
 
     }
 
     Airport* error = new Airport("XXX"); // if XXX appears, found an airport not in adjlist which should be impossible
-    return error;
+    return *error;
 
 }
