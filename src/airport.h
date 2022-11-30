@@ -13,6 +13,7 @@ class Airport {
         Airport();
         Airport(const std::string IATA);
         Airport(const string IATA, const vector<Flight*> flights);
+        bool isFlight(Airport a, Airport b);
 
         bool operator==(const Airport a1);
         friend bool operator<(const Airport a1, const Airport a2);

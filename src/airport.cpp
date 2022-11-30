@@ -74,3 +74,12 @@ std::string Airport::getIATA() const{
     return IATA_;
 
 }
+
+bool Airport::isFlight(Airport a, Airport b) {
+    for (const auto& flight : a.flights_) {
+        if (flight->getDestination() == b.IATA_) {
+            return true;
+        }
+    }
+    return false;
+}

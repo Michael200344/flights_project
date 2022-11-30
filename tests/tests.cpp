@@ -1,6 +1,5 @@
 #include <catch2/catch_test_macros.hpp>
 #include <iostream>
-#include "adjacency_list.h"
 #include "bfs.h"
 
 using namespace std;
@@ -24,7 +23,7 @@ using namespace std;
 
 TEST_CASE("USAdata AdjList", "[weight=5]") {
 
-    const string filename = "/workspaces/CS 225/flights_project/dataFiles/usadata.csv"; 
+    const string filename = "/workspaces/CS225/flights_project/dataFiles/usadata.csv"; 
     cout << "here" << endl;
     AdjList adj = *(new AdjList(filename));
 
@@ -52,13 +51,9 @@ TEST_CASE("AdjList Airport Test") {
 
 }
 
-TEST_CASE("BFS Test", "[weight=5]") {
+TEST_CASE("BFS Test Level 1", "[weight=5]") {
 
-    const string filename = "/workspaces/CS 225/flights_project/dataFiles/usadata.csv"; 
+    const string filename = "/workspaces/CS225/flights_project/dataFiles/usadata.csv"; 
     AdjList adj = *(new AdjList(filename));
-
-    // Airport* test = 
-
-    auto bfs = new BFS(adj);
 
 }
