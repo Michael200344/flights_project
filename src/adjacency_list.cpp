@@ -9,9 +9,6 @@ AdjList::AdjList(const std::string &filename) {
     std::vector<std::string> lines; // initializing vector to save the result of split string
     int rv = SplitString(filestring, '\n', lines); // splitting filestring by newline so that each line is in its own index of lines
 
-;
-
-
     for(size_t i = 0; i < lines.size(); i++){ // loops through each line in lines vector
 
         std::vector<std::string> elems;
@@ -29,19 +26,19 @@ AdjList::AdjList(const std::string &filename) {
     
 }
 
-std::unordered_set<Airport> AdjList::getList(){
+std::unordered_set<Airport> AdjList::getList() const{
 
     return list_;
 
 }
 
-std::unordered_map<std::string, Airport> AdjList::getMap(){
+std::unordered_map<std::string, Airport> AdjList::getMap() const{
 
     return IATAmap_;
 
 }
 
-Airport* AdjList::findAirport(std::string IATA){
+Airport* AdjList::findAirport(std::string IATA) const{
 
     for(Airport a : list_){
 

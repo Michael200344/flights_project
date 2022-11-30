@@ -11,6 +11,8 @@ class Flight {
         void setType(char t);
         std::string getDestination();
         std::string getSource();
+        float getDistance();
+        char getType();
 
     private:
     

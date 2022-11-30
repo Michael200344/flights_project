@@ -25,3 +25,15 @@ std::string Flight::getSource(){
     return source_;
 
 }
+
+float Flight::getDistance(){
+
+    return distance_;
+
+}
+
+char Flight::getType(){
+
+    return type_;
+
+}
