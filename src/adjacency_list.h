@@ -11,9 +11,9 @@ class AdjList {
     public:
 
         AdjList(const std::string &filename);
-        std::unordered_set<Airport> getList();
-        Airport* findAirport(std::string IATA);
-        std::unordered_map<std::string, Airport> getMap();
+        std::unordered_set<Airport> getList() const;
+        Airport* findAirport(std::string IATA) const;
+        std::unordered_map<std::string, Airport> getMap() const;
 
     private:
 

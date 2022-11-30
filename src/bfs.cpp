@@ -62,7 +62,7 @@ void BFS(AdjList &adjlist, Airport start){
                 q.push(adjacentAirport); // add next vertex to queue
 
             }
-            else if(f.getType() = 'u'){ // if airport has been visited, but no edge, mark cross
+            else if(f.getType() == 'u'){ // if airport has been visited, but no edge, mark cross
 
                 f.setType('c');
 
@@ -88,10 +88,11 @@ void BFS(AdjList &adjlist, Airport start){
 
 void printAdjList(const AdjList adjlist){ //function to loop and print new csv with new type, time concerns?
 
-    for(Airport a : adjlist){
+    auto list = adjlist.getList();
+    for(Airport a : list){
 
-        std::cout << a.getIATA << ": " << std::endl;
-        std::vector<Flight> currFlights = a.getFlights();
+        std::cout << a.getIATA() << ": " << std::endl;
+        std::vector<Flight> currFlights = *(a.getFlights());
 
         for(Flight f : currFlights){
 
