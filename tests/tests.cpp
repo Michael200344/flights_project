@@ -6,7 +6,7 @@ using namespace std;
 
 TEST_CASE("Sample Data Adjacency List", "[weight=5]") {
 
-    const string filename = "/workspaces/CS225/flights_project/dataFiles/used_data.csv";
+    const string filename = "/workspaces/CS225/flights_project/dataFiles/usadata.csv";
     cout << "here" << endl;
     AdjList adj = *(new AdjList(filename));
 
