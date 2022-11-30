@@ -6,6 +6,7 @@ using namespace std;
 
 // TEST_CASE("Sample Data Adjacency List", "[weight=5]") {
 
+<<<<<<< HEAD
 //     const string filename = "/workspaces/CS 225/flights_project/dataFiles/used_data.csv"; 
 //     cout << "here" << endl;
 //     AdjList adj = *(new AdjList(filename));
@@ -24,6 +25,9 @@ using namespace std;
 TEST_CASE("USAdata AdjList", "[weight=5]") {
 
     const string filename = "/workspaces/CS225/flights_project/dataFiles/usadata.csv"; 
+=======
+    const string filename = "/workspaces/CS225/flights_project/dataFiles/usadata.csv";
+>>>>>>> fb507d02982bc0b6ab6071812d7fb1d7012d71f4
     cout << "here" << endl;
     AdjList adj = *(new AdjList(filename));
 
