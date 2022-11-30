@@ -13,11 +13,11 @@ BFS::BFS(AdjList &adjlist){
     for(Airport a : list){ // sets each vertex to unvisited
 
         a.setNotVisited();
-        std::vector<Flight> currFlights = *(a.getFlights()); // fetches flights for each airport
+        std::vector<Flight*> currFlights = a.getFlights(); // fetches flights for each airport
 
-        for(Flight f : currFlights){
+        for(Flight* f : currFlights){
 
-            f.setType('u'); // sets all flights to unexplored  ***** TIME COMPLEXITY CONCERN?
+            f->setType('u'); // sets all flights to unexplored  ***** TIME COMPLEXITY CONCERN?
 
         }
     }
@@ -43,27 +43,27 @@ BFS::BFS(AdjList &adjlist, Airport start){
         Airport currAirport = q.front(); // fetch current airport
         q.pop();
 
-        std::vector<Flight> currFlights = *(currAirport.getFlights());  // gets current flights
-        std::map<std::string, Airport> currMap = adjlist.getMap();
+        std::vector<Flight*> currFlights = currAirport.getFlights();  // gets current flights
+        std::map<std::string, Airport*> currMap = adjlist.getMap();
 
-        for(Flight f : currFlights){
+        for(Flight* f : currFlights){
 
-            std::string adjacentIATA = f.getDestination(); // gets adjacent IATA for each flight
-            Airport adjacentAirport = currMap.at(adjacentIATA); // finds actual airport object
+            std::string adjacentIATA = f->getDestination(); // gets adjacent IATA for each flight
+            Airport adjacentAirport = *(currMap).at(adjacentIATA); // finds actual airport object
 
-            auto sourceIATA = f.getSource();
-            auto sourceAirport = currMap.at(sourceIATA); // get source IATA and use it to find airport
+            auto sourceIATA = f->getSource();
+            auto sourceAirport = *(currMap).at(sourceIATA); // get source IATA and use it to find airport
 
             if(!adjacentAirport.getVisited()){ // if adjacent airport isnt visited
 
-                f.setType('d');
+                f->setType('d');
                 adjacentAirport.setVisited(); // set discovery edge and graph visited
                 q.push(adjacentAirport); // add next vertex to queue
 
             }
-            else if(f.getType() == 'u'){ // if airport has been visited, but no edge, mark cross
+            else if(f->getType() == 'u'){ // if airport has been visited, but no edge, mark cross
 
-                f.setType('c');
+                f->setType('c');
 
             }
 
@@ -85,20 +85,4 @@ BFS::BFS(AdjList &adjlist, Airport start){
 
 }
 
-void printAdjList(const AdjList adjlist){ //function to loop and print new csv with new type, time concerns?
 
-    auto list = adjlist.getList();
-    for(Airport a : list){
-
-        std::cout << a.getIATA() << ": " << std::endl;
-        std::vector<Flight> currFlights = *(a.getFlights());
-
-        for(Flight f : currFlights){
-
-            std::cout << f.getSource() << ", " << f.getDestination() << ", " << f.getDistance() << ", " << f.getType() << std::endl;
-
-        }
-
-    }
-
-}

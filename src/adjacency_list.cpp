@@ -12,7 +12,9 @@
 
 AdjList::AdjList(const std::string &filename) {
 
-    list_.clear();
+    // list_.clear();
+
+    vector_.clear();
 
     std::string filestring = file_to_string(filename); // converting file into usable string format
 
@@ -29,17 +31,19 @@ AdjList::AdjList(const std::string &filename) {
         if(IATAlist_.count(Trim(elems[0])) == 0){
 
             IATAlist_.insert(Trim(elems[0]));
-            Airport currAirport = *(new Airport(Trim(elems[0]))); // creates a new airport for each IATA - unordered set checks for duplicates
-            IATAmap_.insert({Trim(elems[0]), currAirport}); // links IATA with airport - should resolve time issues later
-            //list_.insert(currAirport);
+            Airport* currAirport = new Airport(Trim(elems[0])); // creates a new airport for each IATA - unordered set checks for duplicates
+            // IATAmap_.insert({Trim(elems[0]), *currAirport}); // links IATA with airport - should resolve time issues later
+            IATAmap_.insert(std::pair<std::string, Airport*>(Trim(elems[0]), currAirport));
+            // list_.insert(*currAirport);
+            vector_.push_back(*currAirport);
 
         }
        
-        // Airport currAirport = IATAmap_[Trim(elems[0])];
+        Airport* currAirport = IATAmap_[Trim(elems[0])];
         
-        // Flight *currFlight = new Flight(Trim(elems[0]), Trim(elems[1]), std::stof(Trim(elems[2]))); // new flight with source, dest, and distance as float
+        Flight *currFlight = new Flight(Trim(elems[0]), Trim(elems[1]), std::stof(Trim(elems[2]))); // new flight with source, dest, and distance as float
 
-        // currAirport.getFlights()->push_back(*currFlight); // adds current flight to current airports flights vector
+        currAirport->flights_.push_back(currFlight); // adds current flight to current airports flights vector
 
     }
     
@@ -51,9 +55,15 @@ std::set<Airport> AdjList::getList() const{
 
 }
 
-std::map<std::string, Airport> AdjList::getMap() const{
+std::map<std::string, Airport*> AdjList::getMap() const{
 
     return IATAmap_;
+
+}
+
+std::vector<Airport> AdjList::getVector() const{
+
+    return vector_;
 
 }
 
@@ -69,5 +79,23 @@ Airport AdjList::findAirport(std::string IATA) const{
 
     Airport* error = new Airport("XXX"); // if XXX appears, found an airport not in adjlist which should be impossible
     return *error;
+
+}
+
+void AdjList::printAdjList(){ //function to loop and print new csv with new type, time concerns?
+
+    
+    for(Airport a : vector_){
+
+        std::cout << a.getIATA() << ": " << std::endl;
+        std::vector<Flight*> currFlights = a.getFlights();
+
+        for(Flight* f : currFlights){
+
+            std::cout << f->getSource() << ", " << f->getDestination() << ", " << f->getDistance() << ", " << f->getType() << std::endl;
+
+        }
+
+    }
 
 }

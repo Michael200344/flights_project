@@ -1,12 +1,12 @@
 #include "airport.h"
-#include "flight.h"
+#include "stdio.h"
 
 
 // Airport::Airport(){
 //     IATA_ = "";
 // }
 
-Airport::Airport(const std::string IATA){
+Airport::Airport( std::string IATA){
 
     IATA_ = IATA;
     flights_.clear();
@@ -14,7 +14,7 @@ Airport::Airport(const std::string IATA){
     
 }
 
-Airport::Airport(const string IATA, const vector<Flight> flights) {
+Airport::Airport(const string IATA, const vector<Flight*> flights) {
     
     IATA_ = IATA;
     flights_ = flights; // deep copy vector
@@ -29,9 +29,19 @@ Airport::Airport(const string IATA, const vector<Flight> flights) {
 
 // }
 
-std::vector<Flight>* Airport::getFlights(){
+bool operator<(const Airport a1, const Airport a2){
 
-    return &flights_;
+    return a1.getIATA()[0] < a2.getIATA()[0];
+
+}
+
+// Airport Airport::operator()(const Airport a1, const Airport a2){
+//     return a1;
+// }
+
+std::vector<Flight*>& Airport::getFlights() {
+
+    return flights_;
 
 }
 
