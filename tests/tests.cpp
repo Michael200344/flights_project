@@ -7,15 +7,13 @@ using namespace std;
 TEST_CASE("Sample Data Adjacency List", "[weight=5]") {
 
     cout << "here" << endl;
-    AdjList adj = *(new AdjList("used_data.csv"));
+    AdjList adj = *(new AdjList("/workspaces/cs225/flights_project/dataFiles/usadata.csv"));
 
     for(const Airport &a : adj.getList()){
-
 
         cout << a.getIATA() << endl;
 
     }
 
     REQUIRE(1 == 1);
-    
 }
