@@ -125,24 +125,10 @@ CMakeFiles/tests.dir/src/flight.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/src/flight.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/workspaces/CS 225/final_project/flights_project/src/flight.cpp" -o CMakeFiles/tests.dir/src/flight.cpp.s
 
-CMakeFiles/tests.dir/src/graph_algorithms.cpp.o: CMakeFiles/tests.dir/flags.make
-CMakeFiles/tests.dir/src/graph_algorithms.cpp.o: ../src/graph_algorithms.cpp
-CMakeFiles/tests.dir/src/graph_algorithms.cpp.o: CMakeFiles/tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/workspaces/CS 225/final_project/flights_project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/tests.dir/src/graph_algorithms.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tests.dir/src/graph_algorithms.cpp.o -MF CMakeFiles/tests.dir/src/graph_algorithms.cpp.o.d -o CMakeFiles/tests.dir/src/graph_algorithms.cpp.o -c "/workspaces/CS 225/final_project/flights_project/src/graph_algorithms.cpp"
-
-CMakeFiles/tests.dir/src/graph_algorithms.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/src/graph_algorithms.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/workspaces/CS 225/final_project/flights_project/src/graph_algorithms.cpp" > CMakeFiles/tests.dir/src/graph_algorithms.cpp.i
-
-CMakeFiles/tests.dir/src/graph_algorithms.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/src/graph_algorithms.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/workspaces/CS 225/final_project/flights_project/src/graph_algorithms.cpp" -o CMakeFiles/tests.dir/src/graph_algorithms.cpp.s
-
 CMakeFiles/tests.dir/src/utils.cpp.o: CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/src/utils.cpp.o: ../src/utils.cpp
 CMakeFiles/tests.dir/src/utils.cpp.o: CMakeFiles/tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/workspaces/CS 225/final_project/flights_project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/tests.dir/src/utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/workspaces/CS 225/final_project/flights_project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/tests.dir/src/utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tests.dir/src/utils.cpp.o -MF CMakeFiles/tests.dir/src/utils.cpp.o.d -o CMakeFiles/tests.dir/src/utils.cpp.o -c "/workspaces/CS 225/final_project/flights_project/src/utils.cpp"
 
 CMakeFiles/tests.dir/src/utils.cpp.i: cmake_force
@@ -156,7 +142,7 @@ CMakeFiles/tests.dir/src/utils.cpp.s: cmake_force
 CMakeFiles/tests.dir/tests/tests.cpp.o: CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/tests/tests.cpp.o: ../tests/tests.cpp
 CMakeFiles/tests.dir/tests/tests.cpp.o: CMakeFiles/tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/workspaces/CS 225/final_project/flights_project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/tests.dir/tests/tests.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/workspaces/CS 225/final_project/flights_project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/tests.dir/tests/tests.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tests.dir/tests/tests.cpp.o -MF CMakeFiles/tests.dir/tests/tests.cpp.o.d -o CMakeFiles/tests.dir/tests/tests.cpp.o -c "/workspaces/CS 225/final_project/flights_project/tests/tests.cpp"
 
 CMakeFiles/tests.dir/tests/tests.cpp.i: cmake_force
@@ -173,7 +159,6 @@ tests_OBJECTS = \
 "CMakeFiles/tests.dir/src/airport.cpp.o" \
 "CMakeFiles/tests.dir/src/bfs.cpp.o" \
 "CMakeFiles/tests.dir/src/flight.cpp.o" \
-"CMakeFiles/tests.dir/src/graph_algorithms.cpp.o" \
 "CMakeFiles/tests.dir/src/utils.cpp.o" \
 "CMakeFiles/tests.dir/tests/tests.cpp.o"
 
@@ -184,13 +169,12 @@ tests: CMakeFiles/tests.dir/src/adjacency_list.cpp.o
 tests: CMakeFiles/tests.dir/src/airport.cpp.o
 tests: CMakeFiles/tests.dir/src/bfs.cpp.o
 tests: CMakeFiles/tests.dir/src/flight.cpp.o
-tests: CMakeFiles/tests.dir/src/graph_algorithms.cpp.o
 tests: CMakeFiles/tests.dir/src/utils.cpp.o
 tests: CMakeFiles/tests.dir/tests/tests.cpp.o
 tests: CMakeFiles/tests.dir/build.make
 tests: libProjectLib.a
 tests: CMakeFiles/tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/workspaces/CS 225/final_project/flights_project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/workspaces/CS 225/final_project/flights_project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

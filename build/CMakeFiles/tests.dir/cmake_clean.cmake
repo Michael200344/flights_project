@@ -7,8 +7,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/tests.dir/src/bfs.cpp.o.d"
   "CMakeFiles/tests.dir/src/flight.cpp.o"
   "CMakeFiles/tests.dir/src/flight.cpp.o.d"
-  "CMakeFiles/tests.dir/src/graph_algorithms.cpp.o"
-  "CMakeFiles/tests.dir/src/graph_algorithms.cpp.o.d"
   "CMakeFiles/tests.dir/src/utils.cpp.o"
   "CMakeFiles/tests.dir/src/utils.cpp.o.d"
   "CMakeFiles/tests.dir/tests/tests.cpp.o"

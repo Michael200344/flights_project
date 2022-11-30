@@ -217,7 +217,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=REDDIT
+CMAKE_PROJECT_NAME:STATIC=FLIGHTS
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=2.13.1
@@ -324,6 +324,15 @@ FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of Catch2
 FETCHCONTENT_UPDATES_DISCONNECTED_CATCH2:BOOL=OFF
+
+//Value Computed by CMake
+FLIGHTS_BINARY_DIR:STATIC=/workspaces/CS 225/final_project/flights_project/build
+
+//Value Computed by CMake
+FLIGHTS_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+FLIGHTS_SOURCE_DIR:STATIC=/workspaces/CS 225/final_project/flights_project
 
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=/usr/bin/git

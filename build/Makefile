@@ -287,33 +287,6 @@ src/flight.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/flight.cpp.s
 .PHONY : src/flight.cpp.s
 
-src/graph_algorithms.o: src/graph_algorithms.cpp.o
-.PHONY : src/graph_algorithms.o
-
-# target to build an object file
-src/graph_algorithms.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/graph_algorithms.cpp.o
-.PHONY : src/graph_algorithms.cpp.o
-
-src/graph_algorithms.i: src/graph_algorithms.cpp.i
-.PHONY : src/graph_algorithms.i
-
-# target to preprocess a source file
-src/graph_algorithms.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/graph_algorithms.cpp.i
-.PHONY : src/graph_algorithms.cpp.i
-
-src/graph_algorithms.s: src/graph_algorithms.cpp.s
-.PHONY : src/graph_algorithms.s
-
-# target to generate assembly for a file
-src/graph_algorithms.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/graph_algorithms.cpp.s
-.PHONY : src/graph_algorithms.cpp.s
-
 src/utils.o: src/utils.cpp.o
 .PHONY : src/utils.o
 
@@ -391,9 +364,6 @@ help:
 	@echo "... src/flight.o"
 	@echo "... src/flight.i"
 	@echo "... src/flight.s"
-	@echo "... src/graph_algorithms.o"
-	@echo "... src/graph_algorithms.i"
-	@echo "... src/graph_algorithms.s"
 	@echo "... src/utils.o"
 	@echo "... src/utils.i"
 	@echo "... src/utils.s"

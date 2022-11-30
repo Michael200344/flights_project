@@ -15,7 +15,7 @@ class Airport {
 
         // bool operator==(const Airport a1);
 
-        std::vector<Flight>* getFlights() const;
+        std::vector<Flight>* getFlights();
         void setVisited();
         void setNotVisited();
 

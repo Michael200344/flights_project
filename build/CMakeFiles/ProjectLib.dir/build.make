@@ -125,24 +125,10 @@ CMakeFiles/ProjectLib.dir/src/flight.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectLib.dir/src/flight.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/workspaces/CS 225/final_project/flights_project/src/flight.cpp" -o CMakeFiles/ProjectLib.dir/src/flight.cpp.s
 
-CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.o: CMakeFiles/ProjectLib.dir/flags.make
-CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.o: ../src/graph_algorithms.cpp
-CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.o: CMakeFiles/ProjectLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/workspaces/CS 225/final_project/flights_project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.o -MF CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.o.d -o CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.o -c "/workspaces/CS 225/final_project/flights_project/src/graph_algorithms.cpp"
-
-CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/workspaces/CS 225/final_project/flights_project/src/graph_algorithms.cpp" > CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.i
-
-CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/workspaces/CS 225/final_project/flights_project/src/graph_algorithms.cpp" -o CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.s
-
 CMakeFiles/ProjectLib.dir/src/utils.cpp.o: CMakeFiles/ProjectLib.dir/flags.make
 CMakeFiles/ProjectLib.dir/src/utils.cpp.o: ../src/utils.cpp
 CMakeFiles/ProjectLib.dir/src/utils.cpp.o: CMakeFiles/ProjectLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/workspaces/CS 225/final_project/flights_project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ProjectLib.dir/src/utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/workspaces/CS 225/final_project/flights_project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ProjectLib.dir/src/utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProjectLib.dir/src/utils.cpp.o -MF CMakeFiles/ProjectLib.dir/src/utils.cpp.o.d -o CMakeFiles/ProjectLib.dir/src/utils.cpp.o -c "/workspaces/CS 225/final_project/flights_project/src/utils.cpp"
 
 CMakeFiles/ProjectLib.dir/src/utils.cpp.i: cmake_force
@@ -159,7 +145,6 @@ ProjectLib_OBJECTS = \
 "CMakeFiles/ProjectLib.dir/src/airport.cpp.o" \
 "CMakeFiles/ProjectLib.dir/src/bfs.cpp.o" \
 "CMakeFiles/ProjectLib.dir/src/flight.cpp.o" \
-"CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.o" \
 "CMakeFiles/ProjectLib.dir/src/utils.cpp.o"
 
 # External object files for target ProjectLib
@@ -169,11 +154,10 @@ libProjectLib.a: CMakeFiles/ProjectLib.dir/src/adjacency_list.cpp.o
 libProjectLib.a: CMakeFiles/ProjectLib.dir/src/airport.cpp.o
 libProjectLib.a: CMakeFiles/ProjectLib.dir/src/bfs.cpp.o
 libProjectLib.a: CMakeFiles/ProjectLib.dir/src/flight.cpp.o
-libProjectLib.a: CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.o
 libProjectLib.a: CMakeFiles/ProjectLib.dir/src/utils.cpp.o
 libProjectLib.a: CMakeFiles/ProjectLib.dir/build.make
 libProjectLib.a: CMakeFiles/ProjectLib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/workspaces/CS 225/final_project/flights_project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libProjectLib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/workspaces/CS 225/final_project/flights_project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libProjectLib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/ProjectLib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ProjectLib.dir/link.txt --verbose=$(VERBOSE)
 

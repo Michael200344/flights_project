@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.1)
 
-project(REDDIT)
+project(FLIGHTS)
 
 # Specify the C++ standard (CMake3+)
-add_compile_options(-std=c++11)
+add_compile_options(-std=c++14)
 set(CMAKE_CXX_FLAGS "-O3")
 
 # Add header files
@@ -23,7 +23,7 @@ add_library(ProjectLib ${SOURCES} ${INCLUDES})
 target_include_directories(ProjectLib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Add the executable
-add_executable(exec main.cpp)
+add_executable(exec main.cpp) 
 target_link_libraries(exec ProjectLib)
 
 target_include_directories(exec PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

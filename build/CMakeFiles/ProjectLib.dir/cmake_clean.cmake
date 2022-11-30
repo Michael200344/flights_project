@@ -7,8 +7,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/ProjectLib.dir/src/bfs.cpp.o.d"
   "CMakeFiles/ProjectLib.dir/src/flight.cpp.o"
   "CMakeFiles/ProjectLib.dir/src/flight.cpp.o.d"
-  "CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.o"
-  "CMakeFiles/ProjectLib.dir/src/graph_algorithms.cpp.o.d"
   "CMakeFiles/ProjectLib.dir/src/utils.cpp.o"
   "CMakeFiles/ProjectLib.dir/src/utils.cpp.o.d"
   "libProjectLib.a"

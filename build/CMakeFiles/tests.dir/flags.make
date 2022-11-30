@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I"/workspaces/CS 225/final_project/flights_project/include" -I"/workspaces/CS 225/final_project/flights_project" -I"/workspaces/CS 225/final_project/flights_project/build/_deps/catch2-src/single_include"
 
-CXX_FLAGS = -O3 -std=c++11
+CXX_FLAGS = -O3 -std=c++14
 
