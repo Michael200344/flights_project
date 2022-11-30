@@ -337,15 +337,6 @@ FLIGHTS_SOURCE_DIR:STATIC=/workspaces/CS 225/final_project/flights_project
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=/usr/bin/git
 
-//Value Computed by CMake
-REDDIT_BINARY_DIR:STATIC=/workspaces/CS 225/final_project/flights_project/build
-
-//Value Computed by CMake
-REDDIT_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-REDDIT_SOURCE_DIR:STATIC=/workspaces/CS 225/final_project/flights_project
-
 
 ########################
 # INTERNAL cache entries
