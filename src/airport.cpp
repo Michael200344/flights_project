@@ -6,7 +6,7 @@
 //     IATA_ = "";
 // }
 
-Airport::Airport( std::string IATA){
+Airport::Airport(std::string IATA){
 
     IATA_ = IATA;
     flights_.clear();
@@ -14,13 +14,13 @@ Airport::Airport( std::string IATA){
     
 }
 
-Airport::Airport(const string IATA, const vector<Flight*> flights) {
+// Airport::Airport(const string IATA, const vector<Flight*> flights) {
     
-    IATA_ = IATA;
-    flights_ = flights; // deep copy vector
-    visited_ = false;
+//     IATA_ = IATA;
+//     flights_ = flights; // deep copy vector
+//     visited_ = false;
 
-}
+// }
 
 // bool Airport::operator==(const Airport a1){
 
@@ -42,6 +42,12 @@ bool operator<(const Airport a1, const Airport a2){
 std::vector<Flight*>& Airport::getFlights() {
 
     return flights_;
+
+}
+
+void Airport::setFlights(Flight* f){
+
+    flights_.push_back(f);
 
 }
 

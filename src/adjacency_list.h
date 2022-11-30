@@ -33,7 +33,7 @@ class AdjList {
         
         Airport findAirport(std::string IATA) const;
         std::map<std::string, Airport*> getMap() const;
-        std::vector<Airport> getVector() const;
+        std::vector<Airport*> getVector() const;
 
         std::set<Airport> getList() const;
         void printAdjList();
@@ -46,6 +46,6 @@ class AdjList {
         std::set<std::string> IATAlist_;
         std::map<std::string, Airport*> IATAmap_;
 
-        std::vector<Airport> vector_;
+        std::vector<Airport*> vector_;
 
 };
