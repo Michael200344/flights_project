@@ -41,3 +41,5 @@ std::string Trim(const std::string & str);
  * @return The number of substrings created
  */
 int SplitString(const std::string & str1, char sep, std::vector<std::string> &fields);
+
+int SplitString(const std::string & str1, std::string sep, std::vector<std::string> &fields);

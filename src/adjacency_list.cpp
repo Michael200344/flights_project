@@ -17,9 +17,11 @@ AdjList::AdjList(const std::string &filename) {
     std::string filestring = file_to_string(filename); // converting file into usable string format
 
     std::vector<std::string> lines; // initializing vector to save the result of split string
-    int rv = SplitString(filestring, '\n', lines); // splitting filestring by newline so that each line is in its own index of lines
-
-    for(size_t i = 0; i < lines.size(); i++){ // loops through each line in lines vector
+    int rv = SplitString(filestring, "\r\n", lines); // splitting filestring by newline so that each line is in its own index of lines
+    for (std::string line : lines) {
+        line.erase(line.end() - 2, line.end());
+    }
+    for(size_t i = 1; i < lines.size(); i++){ // loops through each line in lines vector
 
         std::vector<std::string> elems;
         int rv2 = SplitString(lines[i], ',', elems); // splits each line by commas, stores result in elems
@@ -27,8 +29,9 @@ AdjList::AdjList(const std::string &filename) {
         if(IATAlist_.count(Trim(elems[0])) == 0){
 
             IATAlist_.insert(Trim(elems[0]));
-            Airport *currAirport = new Airport(Trim(elems[0])); // creates a new airport for each IATA - unordered set checks for duplicates
-            IATAmap_.insert({Trim(elems[0]), *currAirport}); // links IATA with airport - should resolve time issues later
+            Airport currAirport = *(new Airport(Trim(elems[0]))); // creates a new airport for each IATA - unordered set checks for duplicates
+            IATAmap_.insert({Trim(elems[0]), currAirport}); // links IATA with airport - should resolve time issues later
+            //list_.insert(currAirport);
 
         }
        
