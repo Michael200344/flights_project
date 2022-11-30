@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -rdynamic CMakeFiles/exec.dir/main.cpp.o -o exec  libProjectLib.a 

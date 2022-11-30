@@ -113,213 +113,209 @@ preinstall/fast:
 
 # clear depends
 depend:
+	$(CMAKE_COMMAND) -P "/workspaces/CS 225/final_project/flights_project/build/CMakeFiles/VerifyGlobs.cmake"
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ProjectLib
+# Target rules for targets named test
 
 # Build rule for target.
-ProjectLib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ProjectLib
-.PHONY : ProjectLib
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
+.PHONY : test
 
 # fast build rule for target.
-ProjectLib/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/build
-.PHONY : ProjectLib/fast
+test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
 
 #=============================================================================
-# Target rules for targets named exec
+# Target rules for targets named main
 
 # Build rule for target.
-exec: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exec
-.PHONY : exec
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-exec/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/build
-.PHONY : exec/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 #=============================================================================
-# Target rules for targets named tests
+# Target rules for targets named src
 
 # Build rule for target.
-tests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests
-.PHONY : tests
+src: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src
+.PHONY : src
 
 # fast build rule for target.
-tests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
-.PHONY : tests/fast
+src/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/build
+.PHONY : src/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+#=============================================================================
+# Target rules for targets named adjacency_list.h
 
-# target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/main.cpp.o
-.PHONY : main.cpp.o
+# Build rule for target.
+adjacency_list.h: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adjacency_list.h
+.PHONY : adjacency_list.h
 
-main.i: main.cpp.i
-.PHONY : main.i
+# fast build rule for target.
+adjacency_list.h/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/adjacency_list.h.dir/build.make src/CMakeFiles/adjacency_list.h.dir/build
+.PHONY : adjacency_list.h/fast
 
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/main.cpp.i
-.PHONY : main.cpp.i
+#=============================================================================
+# Target rules for targets named adjacency_list.cpp
 
-main.s: main.cpp.s
-.PHONY : main.s
+# Build rule for target.
+adjacency_list.cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adjacency_list.cpp
+.PHONY : adjacency_list.cpp
 
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/main.cpp.s
-.PHONY : main.cpp.s
+# fast build rule for target.
+adjacency_list.cpp/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/adjacency_list.cpp.dir/build.make src/CMakeFiles/adjacency_list.cpp.dir/build
+.PHONY : adjacency_list.cpp/fast
 
-src/adjacency_list.o: src/adjacency_list.cpp.o
-.PHONY : src/adjacency_list.o
+#=============================================================================
+# Target rules for targets named airport.h
 
-# target to build an object file
-src/adjacency_list.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/adjacency_list.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/adjacency_list.cpp.o
-.PHONY : src/adjacency_list.cpp.o
+# Build rule for target.
+airport.h: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 airport.h
+.PHONY : airport.h
 
-src/adjacency_list.i: src/adjacency_list.cpp.i
-.PHONY : src/adjacency_list.i
+# fast build rule for target.
+airport.h/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/airport.h.dir/build.make src/CMakeFiles/airport.h.dir/build
+.PHONY : airport.h/fast
 
-# target to preprocess a source file
-src/adjacency_list.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/adjacency_list.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/adjacency_list.cpp.i
-.PHONY : src/adjacency_list.cpp.i
+#=============================================================================
+# Target rules for targets named airport.cpp
 
-src/adjacency_list.s: src/adjacency_list.cpp.s
-.PHONY : src/adjacency_list.s
+# Build rule for target.
+airport.cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 airport.cpp
+.PHONY : airport.cpp
 
-# target to generate assembly for a file
-src/adjacency_list.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/adjacency_list.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/adjacency_list.cpp.s
-.PHONY : src/adjacency_list.cpp.s
+# fast build rule for target.
+airport.cpp/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/airport.cpp.dir/build.make src/CMakeFiles/airport.cpp.dir/build
+.PHONY : airport.cpp/fast
 
-src/airport.o: src/airport.cpp.o
-.PHONY : src/airport.o
+#=============================================================================
+# Target rules for targets named flight.h
 
-# target to build an object file
-src/airport.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/airport.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/airport.cpp.o
-.PHONY : src/airport.cpp.o
+# Build rule for target.
+flight.h: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 flight.h
+.PHONY : flight.h
 
-src/airport.i: src/airport.cpp.i
-.PHONY : src/airport.i
+# fast build rule for target.
+flight.h/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/flight.h.dir/build.make src/CMakeFiles/flight.h.dir/build
+.PHONY : flight.h/fast
 
-# target to preprocess a source file
-src/airport.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/airport.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/airport.cpp.i
-.PHONY : src/airport.cpp.i
+#=============================================================================
+# Target rules for targets named flight.cpp
 
-src/airport.s: src/airport.cpp.s
-.PHONY : src/airport.s
+# Build rule for target.
+flight.cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 flight.cpp
+.PHONY : flight.cpp
 
-# target to generate assembly for a file
-src/airport.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/airport.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/airport.cpp.s
-.PHONY : src/airport.cpp.s
+# fast build rule for target.
+flight.cpp/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/flight.cpp.dir/build.make src/CMakeFiles/flight.cpp.dir/build
+.PHONY : flight.cpp/fast
 
-src/bfs.o: src/bfs.cpp.o
-.PHONY : src/bfs.o
+#=============================================================================
+# Target rules for targets named bfs.h
 
-# target to build an object file
-src/bfs.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/bfs.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/bfs.cpp.o
-.PHONY : src/bfs.cpp.o
+# Build rule for target.
+bfs.h: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bfs.h
+.PHONY : bfs.h
 
-src/bfs.i: src/bfs.cpp.i
-.PHONY : src/bfs.i
+# fast build rule for target.
+bfs.h/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bfs.h.dir/build.make src/CMakeFiles/bfs.h.dir/build
+.PHONY : bfs.h/fast
 
-# target to preprocess a source file
-src/bfs.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/bfs.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/bfs.cpp.i
-.PHONY : src/bfs.cpp.i
+#=============================================================================
+# Target rules for targets named bfs.cpp
 
-src/bfs.s: src/bfs.cpp.s
-.PHONY : src/bfs.s
+# Build rule for target.
+bfs.cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bfs.cpp
+.PHONY : bfs.cpp
 
-# target to generate assembly for a file
-src/bfs.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/bfs.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/bfs.cpp.s
-.PHONY : src/bfs.cpp.s
+# fast build rule for target.
+bfs.cpp/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/bfs.cpp.dir/build.make src/CMakeFiles/bfs.cpp.dir/build
+.PHONY : bfs.cpp/fast
 
-src/flight.o: src/flight.cpp.o
-.PHONY : src/flight.o
+#=============================================================================
+# Target rules for targets named utils.h
 
-# target to build an object file
-src/flight.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/flight.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/flight.cpp.o
-.PHONY : src/flight.cpp.o
+# Build rule for target.
+utils.h: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils.h
+.PHONY : utils.h
 
-src/flight.i: src/flight.cpp.i
-.PHONY : src/flight.i
+# fast build rule for target.
+utils.h/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/utils.h.dir/build.make src/CMakeFiles/utils.h.dir/build
+.PHONY : utils.h/fast
 
-# target to preprocess a source file
-src/flight.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/flight.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/flight.cpp.i
-.PHONY : src/flight.cpp.i
+#=============================================================================
+# Target rules for targets named utils.cpp
 
-src/flight.s: src/flight.cpp.s
-.PHONY : src/flight.s
+# Build rule for target.
+utils.cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils.cpp
+.PHONY : utils.cpp
 
-# target to generate assembly for a file
-src/flight.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/flight.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/flight.cpp.s
-.PHONY : src/flight.cpp.s
+# fast build rule for target.
+utils.cpp/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/utils.cpp.dir/build.make src/CMakeFiles/utils.cpp.dir/build
+.PHONY : utils.cpp/fast
 
-src/utils.o: src/utils.cpp.o
-.PHONY : src/utils.o
+entry/main.o: entry/main.cpp.o
+.PHONY : entry/main.o
 
 # target to build an object file
-src/utils.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/utils.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/utils.cpp.o
-.PHONY : src/utils.cpp.o
+entry/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/entry/main.cpp.o
+.PHONY : entry/main.cpp.o
 
-src/utils.i: src/utils.cpp.i
-.PHONY : src/utils.i
+entry/main.i: entry/main.cpp.i
+.PHONY : entry/main.i
 
 # target to preprocess a source file
-src/utils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/utils.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/utils.cpp.i
-.PHONY : src/utils.cpp.i
+entry/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/entry/main.cpp.i
+.PHONY : entry/main.cpp.i
 
-src/utils.s: src/utils.cpp.s
-.PHONY : src/utils.s
+entry/main.s: entry/main.cpp.s
+.PHONY : entry/main.s
 
 # target to generate assembly for a file
-src/utils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectLib.dir/build.make CMakeFiles/ProjectLib.dir/src/utils.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/utils.cpp.s
-.PHONY : src/utils.cpp.s
+entry/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/entry/main.cpp.s
+.PHONY : entry/main.cpp.s
 
 tests/tests.o: tests/tests.cpp.o
 .PHONY : tests/tests.o
 
 # target to build an object file
 tests/tests.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/tests.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/tests.cpp.o
 .PHONY : tests/tests.cpp.o
 
 tests/tests.i: tests/tests.cpp.i
@@ -327,7 +323,7 @@ tests/tests.i: tests/tests.cpp.i
 
 # target to preprocess a source file
 tests/tests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/tests.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/tests.cpp.i
 .PHONY : tests/tests.cpp.i
 
 tests/tests.s: tests/tests.cpp.s
@@ -335,7 +331,7 @@ tests/tests.s: tests/tests.cpp.s
 
 # target to generate assembly for a file
 tests/tests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/tests.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/tests.cpp.s
 .PHONY : tests/tests.cpp.s
 
 # Help Target
@@ -346,27 +342,22 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... ProjectLib"
-	@echo "... exec"
-	@echo "... tests"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... src/adjacency_list.o"
-	@echo "... src/adjacency_list.i"
-	@echo "... src/adjacency_list.s"
-	@echo "... src/airport.o"
-	@echo "... src/airport.i"
-	@echo "... src/airport.s"
-	@echo "... src/bfs.o"
-	@echo "... src/bfs.i"
-	@echo "... src/bfs.s"
-	@echo "... src/flight.o"
-	@echo "... src/flight.i"
-	@echo "... src/flight.s"
-	@echo "... src/utils.o"
-	@echo "... src/utils.i"
-	@echo "... src/utils.s"
+	@echo "... adjacency_list.cpp"
+	@echo "... adjacency_list.h"
+	@echo "... airport.cpp"
+	@echo "... airport.h"
+	@echo "... bfs.cpp"
+	@echo "... bfs.h"
+	@echo "... flight.cpp"
+	@echo "... flight.h"
+	@echo "... main"
+	@echo "... src"
+	@echo "... test"
+	@echo "... utils.cpp"
+	@echo "... utils.h"
+	@echo "... entry/main.o"
+	@echo "... entry/main.i"
+	@echo "... entry/main.s"
 	@echo "... tests/tests.o"
 	@echo "... tests/tests.i"
 	@echo "... tests/tests.s"
@@ -381,6 +372,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+	$(CMAKE_COMMAND) -P "/workspaces/CS 225/final_project/flights_project/build/CMakeFiles/VerifyGlobs.cmake"
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

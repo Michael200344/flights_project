@@ -1,0 +1,2 @@
+/usr/bin/ar qc libData.cpp.a CMakeFiles/Data.cpp.dir/adjacency_list.cpp.o CMakeFiles/Data.cpp.dir/airport.cpp.o CMakeFiles/Data.cpp.dir/bfs.cpp.o CMakeFiles/Data.cpp.dir/flight.cpp.o CMakeFiles/Data.cpp.dir/utils.cpp.o
+/usr/bin/ranlib libData.cpp.a

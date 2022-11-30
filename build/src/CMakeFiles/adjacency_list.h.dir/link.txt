@@ -1,0 +1,2 @@
+/usr/bin/ar qc libadjacency_list.h.a CMakeFiles/adjacency_list.h.dir/adjacency_list.cpp.o CMakeFiles/adjacency_list.h.dir/airport.cpp.o CMakeFiles/adjacency_list.h.dir/bfs.cpp.o CMakeFiles/adjacency_list.h.dir/flight.cpp.o CMakeFiles/adjacency_list.h.dir/utils.cpp.o
+/usr/bin/ranlib libadjacency_list.h.a
