@@ -7,17 +7,19 @@ using namespace std;
 
 TEST_CASE("Sample Data Adjacency List", "[weight=5]") {
 
+    const string filename = "/workspaces/CS225/flights_project/dataFiles/used_data.csv";
     cout << "here" << endl;
 
     ifstream myfile;
     myfile.open("used_data.csv");
 
     AdjList adj = *(new AdjList("used_data.csv"));
+    AdjList adj = *(new AdjList(filename));
 
-    for(const Airport &a : adj.getList()){
+    for(const auto& k : adj.getMap()){
 
 
-        cout << a.getIATA() << endl;
+        cout << k.first << endl;
 
     }
 
@@ -30,4 +32,6 @@ TEST_CASE("tostring test") {
 
     cout << file_to_string("test_out.csv");
 
+    REQUIRE(adj.getMap().size() == 6);
+    
 }

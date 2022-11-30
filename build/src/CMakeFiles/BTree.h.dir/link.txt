@@ -1,2 +1,0 @@
-/usr/bin/ar qc libBTree.h.a CMakeFiles/BTree.h.dir/adjacency_list.cpp.o CMakeFiles/BTree.h.dir/airport.cpp.o CMakeFiles/BTree.h.dir/bfs.cpp.o CMakeFiles/BTree.h.dir/flight.cpp.o CMakeFiles/BTree.h.dir/utils.cpp.o
-/usr/bin/ranlib libBTree.h.a
