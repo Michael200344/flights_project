@@ -1,4 +1,4 @@
-# Install script for directory: /workspaces/cs225/release-f22/final_project/flights_project
+# Install script for directory: /workspaces/CS 225/final_project/flights_project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
+    set(CMAKE_INSTALL_CONFIG_NAME "")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/workspaces/cs225/release-f22/final_project/flights_project/build/src/cmake_install.cmake")
+  include("/workspaces/CS 225/final_project/flights_project/build/_deps/catch2-build/cmake_install.cmake")
 
 endif()
 
@@ -56,5 +56,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/workspaces/cs225/release-f22/final_project/flights_project/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/workspaces/CS 225/final_project/flights_project/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

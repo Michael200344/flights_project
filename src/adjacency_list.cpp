@@ -1,4 +1,14 @@
 #include "adjacency_list.h"
+#include <unordered_set>
+
+// struct AirportEqual {
+//     bool operator()(const Airport & a1, const Airport & a2) {
+//         if (a1.getIATA() == a2.getIATA())
+//             return true;
+//         else
+//             return false;
+//     }
+// };
 
 AdjList::AdjList(const std::string &filename) {
 
@@ -26,7 +36,7 @@ AdjList::AdjList(const std::string &filename) {
     
 }
 
-std::unordered_set<Airport> AdjList::getList() const{
+std::unordered_set<Airport, AdjList::AirportHash> AdjList::getList() const{
 
     return list_;
 
@@ -38,17 +48,17 @@ std::unordered_map<std::string, Airport> AdjList::getMap() const{
 
 }
 
-Airport* AdjList::findAirport(std::string IATA) const{
+Airport AdjList::findAirport(std::string IATA) const{
 
     for(Airport a : list_){
 
         if(a.getIATA() == IATA){
-            return &a;
+            return a;
         }
 
     }
 
     Airport* error = new Airport("XXX"); // if XXX appears, found an airport not in adjlist which should be impossible
-    return error;
+    return *error;
 
 }

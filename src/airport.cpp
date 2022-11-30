@@ -22,7 +22,14 @@ Airport::Airport(const string IATA, const vector<Flight> flights) {
 
 }
 
-std::vector<Flight>* Airport::getFlights(){
+// bool Airport::operator==(const Airport a1){
+
+//     if(this->getIATA() == a1.getIATA()) return true;
+//     return false;
+
+// }
+
+std::vector<Flight>* Airport::getFlights() const{
 
     return &flights_;
 
@@ -40,13 +47,13 @@ void Airport::setNotVisited(){
 
 }
 
-bool Airport::getVisited(){
+bool Airport::getVisited() const{
 
     return visited_;
 
 }
 
-std::string Airport::getIATA(){
+std::string Airport::getIATA() const{
 
     return IATA_;
 
