@@ -29,20 +29,22 @@ class AdjList {
 //     }
 // };
 
+        AdjList();
         AdjList(const std::string &filename);
         
         Airport findAirport(std::string IATA) const;
         std::map<std::string, Airport*> getMap() const;
         std::vector<Airport*> getVector() const;
 
-        std::set<Airport> getList() const;
+        std::set<std::string> getList() const;
         void printAdjList();
 
-        
+        std::pair<AdjList*, std::vector<std::string>> trimList(std::vector<string> IATAlist);
+        Airport* searchMap(std::string IATA);
 
     private:
 
-        std::set<Airport> list_;
+        // std::set<Airport> list_;
         std::set<std::string> IATAlist_;
         std::map<std::string, Airport*> IATAmap_;
 
