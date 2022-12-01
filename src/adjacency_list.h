@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include <set>
 #include <map>
+#include <cstdlib>
 
 class AdjList {
 
@@ -41,6 +42,8 @@ class AdjList {
 
         std::pair<AdjList*, std::vector<std::string>> trimList(std::vector<string> IATAlist);
         Airport* searchMap(std::string IATA);
+
+        AdjList* generateSample(size_t n);
 
     private:
 

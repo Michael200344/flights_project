@@ -115,14 +115,16 @@ void AdjList::printAdjList(){ //function to loop and print new csv with new type
 
 }
 
-std::pair<AdjList*, std::vector<std::string>> AdjList::trimList(std::vector<string> IATAlist) {
+std::pair<AdjList*, std::vector<std::string>> AdjList::trimList(std::vector<string> IATAlist) { // takes us list and shortens it to user input
+
+    // if(IATAlist.empty()) return std::pair<AdjList*, std::vector<std::string>>(NULL, NULL);
 
     AdjList* rList = new AdjList(); // to add values to eventually create the return adjacency list
     std::vector<std::string> invalList; // to keep track of invalid user IATAs
 
-    for(const auto& s : IATAlist){
+    for(const auto& s : IATAlist) {
 
-        if(searchMap(s) != NULL){
+        if(searchMap(s) != NULL) {
 
             rList->vector_.push_back(searchMap(s));
             rList->IATAlist_.insert(s);
@@ -139,6 +141,36 @@ std::pair<AdjList*, std::vector<std::string>> AdjList::trimList(std::vector<stri
 
 Airport* AdjList::searchMap(std::string IATA) {
 
-    if(IATAmap_.find(IATA) != IATAmap_.end()) return IATAmap_[IATA];
+    if(IATAmap_.find(IATA) != IATAmap_.end()) return IATAmap_[IATA]; // does find have a condition for empty maps? otherwise must add
     return NULL;
+
+}
+
+AdjList* AdjList::generateSample(size_t n) { // pass in large set, generate n random airports from the set
+
+    if(n == 0) return nullptr;
+
+    size_t range = vector_.size();
+
+    AdjList* rList = new AdjList();
+
+    while(n > 0){
+
+        int idx = std::rand() % range;
+        std::string currIATA = vector_[idx]->getIATA();
+
+        if(rList->searchMap(currIATA) == NULL) {
+
+            rList->vector_.push_back(searchMap(currIATA));
+            rList->IATAlist_.insert(currIATA);
+            rList->IATAmap_.insert(std::pair<std::string, Airport*>(currIATA, searchMap(currIATA)));
+
+        }
+        else n++; // if the airport is alreayd in rList, duplicate, so must subtract n until unique found
+
+        n--;
+    }
+
+    return rList;
+
 }

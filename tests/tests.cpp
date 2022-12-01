@@ -5,13 +5,11 @@
 
 using namespace std;
 
-TEST_CASE("USAdata AdjList", "[weight=5]") {
+AdjList* USAadj = new AdjList("/workspaces/CS 225/flights_project/dataFiles/usadata.csv");
 
-    const string filename = "/workspaces/CS 225/flights_project/dataFiles/usadata.csv"; 
-    cout << "here" << endl;
-    AdjList adj = *(new AdjList(filename));
+TEST_CASE("USAdata AdjList Test") {
 
-    for(auto& a : adj.getVector()){
+    for(auto& a : USAadj->getVector()){
 
 
         cout << a->getIATA() << ": " << endl;
@@ -24,12 +22,24 @@ TEST_CASE("USAdata AdjList", "[weight=5]") {
 
     }
 
-    REQUIRE(adj.getMap().size() == 35);
+    REQUIRE(USAadj->getMap().size() == 35);
 
     // adj.printAdjList();
 }
 
-TEST_CASE("trimList test") {
+TEST_CASE("trimList Test NULL") {
+
+    vector<string> inputIATAs;
+    inputIATAs.clear();
+
+    pair<AdjList*, vector<string>> p;
+    p = USAadj->trimList(inputIATAs);
+
+    REQUIRE(p.first->getVector().empty());
+
+}
+
+TEST_CASE("trimList Test") {
 
     vector<string> inputIATAs;
 
@@ -40,10 +50,8 @@ TEST_CASE("trimList test") {
     inputIATAs.push_back("IND");
     inputIATAs.push_back("XXX");
 
-    AdjList* adj = new AdjList("/workspaces/CS 225/flights_project/dataFiles/usadata.csv");
-
     pair<AdjList*, vector<string>> p;
-    p = adj->trimList(inputIATAs);
+    p = USAadj->trimList(inputIATAs);
 
     for(auto& a : p.first->getVector()){
 
@@ -63,19 +71,22 @@ TEST_CASE("trimList test") {
 
 }
 
-TEST_CASE("AdjList Airport Test") {
+TEST_CASE("generateSample Test") {
 
+    size_t n = rand() % 15 + 1;
 
+    AdjList* rList = USAadj->generateSample(n);
 
-}
-
-TEST_CASE("BFS Test", "[weight=5]") {
-
-    const string filename = "/workspaces/CS 225/flights_project/dataFiles/usadata.csv"; 
-    AdjList adj = *(new AdjList(filename));
-
-    // Airport* test = 
-
-    auto bfs = new BFS(adj);
+    REQUIRE(rList->getVector().size() == n);
+    REQUIRE(rList->getList().size() == n);
 
 }
+
+
+// TEST_CASE("BFS Test") {
+
+//     // Airport* test = 
+
+//     auto bfs = new BFS(USAadj);
+
+// }
