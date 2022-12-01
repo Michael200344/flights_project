@@ -10,6 +10,14 @@
 //     }
 // };
 
+AdjList::AdjList() {
+
+    IATAlist_.clear();
+    IATAmap_.clear();
+    vector_.clear();
+
+}
+
 AdjList::AdjList(const std::string &filename) {
 
     // list_.clear();
@@ -56,9 +64,9 @@ AdjList::AdjList(const std::string &filename) {
     }
 }
 
-std::set<Airport> AdjList::getList() const{
+std::set<std::string> AdjList::getList() const{
 
-    return list_;
+    return IATAlist_;
 
 }
 
@@ -74,20 +82,20 @@ std::vector<Airport*> AdjList::getVector() const{
 
 }
 
-Airport AdjList::findAirport(std::string IATA) const{
+// Airport AdjList::findAirport(std::string IATA) const{
 
-    for(Airport a : list_){
+//     for(Airport a : list_){
 
-        if(a.getIATA() == IATA){
-            return a;
-        }
+//         if(a.getIATA() == IATA){
+//             return a;
+//         }
 
-    }
+//     }
 
-    Airport* error = new Airport("XXX"); // if XXX appears, found an airport not in adjlist which should be impossible
-    return *error;
+//     Airport* error = new Airport("XXX"); // if XXX appears, found an airport not in adjlist which should be impossible
+//     return *error;
 
-}
+// }
 
 void AdjList::printAdjList(){ //function to loop and print new csv with new type, time concerns?
 
@@ -105,4 +113,32 @@ void AdjList::printAdjList(){ //function to loop and print new csv with new type
 
     }
 
+}
+
+std::pair<AdjList*, std::vector<std::string>> AdjList::trimList(std::vector<string> IATAlist) {
+
+    AdjList* rList = new AdjList(); // to add values to eventually create the return adjacency list
+    std::vector<std::string> invalList; // to keep track of invalid user IATAs
+
+    for(const auto& s : IATAlist){
+
+        if(searchMap(s) != NULL){
+
+            rList->vector_.push_back(searchMap(s));
+            rList->IATAlist_.insert(s);
+            rList->IATAmap_.insert(std::pair<std::string, Airport*>(s, searchMap(s)));
+
+        }
+        else invalList.push_back(s);
+
+    }
+
+    return std::pair<AdjList*, std::vector<std::string>>(rList, invalList);
+
+}
+
+Airport* AdjList::searchMap(std::string IATA) {
+
+    if(IATAmap_.find(IATA) != IATAmap_.end()) return IATAmap_[IATA];
+    return NULL;
 }
