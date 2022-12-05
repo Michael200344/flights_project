@@ -39,9 +39,9 @@ bool operator<(const Airport a1, const Airport a2){
 //     return a1;
 // }
 
-std::vector<Flight*>& Airport::getFlights() {
+std::vector<Flight*>* Airport::getFlights() {
 
-    return flights_;
+    return &flights_;
 
 }
 

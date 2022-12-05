@@ -18,7 +18,7 @@ class Airport {
         friend bool operator<(const Airport a1, const Airport a2);
         Airport operator()(const Airport a1, const Airport a2);
 
-        std::vector<Flight*>& getFlights();
+        std::vector<Flight*>* getFlights();
         void setFlights(Flight* f);
 
         void setVisited();

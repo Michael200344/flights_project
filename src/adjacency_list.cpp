@@ -171,6 +171,24 @@ AdjList* AdjList::generateSample(size_t n) { // pass in large set, generate n ra
         n--;
     }
 
+    for(Airport* a : rList->getVector()){ // remove all irrelevant flights
+
+        std::vector<Flight*>* currFlights = a->getFlights();
+        for(size_t f = 0; f < currFlights->size(); f++){
+
+            //if flight destination isnt in trimmed set, remove it
+            std::vector<Flight*> fl = *currFlights;
+            std::string currDest = fl[f]->getDestination();
+            if(rList->getList().count(currDest) != 1){
+                currFlights->erase(currFlights->begin() + f);
+            }
+        }
+
+        int h = 0;
+
+    }
+
+
     return rList;
 
 }
