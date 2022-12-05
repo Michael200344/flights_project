@@ -38,29 +38,30 @@ AdjList::AdjList(const std::string &filename) {
         elems.clear();
         int rv2 = SplitString(lines[i], ',', elems); // splits each line by commas, stores result in elems
         if (elems.size() == 4) {
+
+            std::string source = Trim(elems[1]);
             if(IATAlist_.count(Trim(elems[1])) == 0){
 
-                // std::cout << "fjdjdalf" << std::endl;
-
-                IATAlist_.insert(Trim(elems[1]));
-                Airport* currAirport = new Airport(Trim(elems[1])); // creates a new airport for each IATA - unordered set checks for duplicates
-                // IATAmap_.insert({Trim(elems[0]), *currAirport}); // links IATA with airport - should resolve time issues later
-                IATAmap_.insert(std::pair<std::string, Airport*>(Trim(elems[1]), currAirport));
-                // list_.insert(*currAirport);
+                IATAlist_.insert(source);
+                Airport* currAirport = new Airport(source); // creates a new airport for each IATA - unordered set checks for duplicates
+                IATAmap_.insert(std::pair<std::string, Airport*>(source, currAirport));
                 vector_.push_back(currAirport);
 
             }
-        
-            // std::cout << currAirport << " in map - > " << IATAmap_[Trim(elems[0])] << std::endl;
-            
-            // Flight *currFlight = new Flight(Trim(elems[0]), Trim(elems[1]), std::stof(Trim(elems[2]))); // new flight with source, dest, and distance as float
 
-            IATAmap_[Trim(elems[1])]->setFlights(new Flight(Trim(elems[1]), Trim(elems[2]), std::stof(Trim(elems[3])))); // adds current flight to current airports flights vector
+            std::vector<Flight*> currF = IATAmap_[source]->getFlights();
+            bool shouldAdd = true;
+            for(Flight* f : currF){
+
+                if(f->getDestination() == Trim(elems[2])){
+                    shouldAdd = false;
+                    break;
+                }
+
+            }
+            if(shouldAdd)
+                IATAmap_[Trim(elems[1])]->setFlights(new Flight(source, Trim(elems[2]), std::stof(Trim(elems[3])))); // adds current flight to current airports flights vector
         }
-    }
-    int joe = 0;
-    for (const auto& k : IATAmap_) {
-        // Hello
     }
 }
 
@@ -135,6 +136,23 @@ std::pair<AdjList*, std::vector<std::string>> AdjList::trimList(std::vector<stri
 
     }
 
+    for(Airport* a : rList->getVector()){ // trims flight list
+
+        std::vector<Flight*> tempF;
+        std::vector<Flight*> currF = a->getFlights();
+
+        for(auto &f : currF){
+
+            if(rList->getList().count(f->getDestination()) == 1){
+                tempF.push_back(f);
+            }
+
+        }
+
+        a->replaceFlights(tempF);
+
+    }
+
     return std::pair<AdjList*, std::vector<std::string>>(rList, invalList);
 
 }
@@ -171,20 +189,20 @@ AdjList* AdjList::generateSample(size_t n) { // pass in large set, generate n ra
         n--;
     }
 
-    for(Airport* a : rList->getVector()){ // remove all irrelevant flights
+    for(Airport* a : rList->getVector()){ // trims flight list
 
-        std::vector<Flight*>* currFlights = a->getFlights();
-        for(size_t f = 0; f < currFlights->size(); f++){
+        std::vector<Flight*> tempF;
+        std::vector<Flight*> currF = a->getFlights();
 
-            //if flight destination isnt in trimmed set, remove it
-            std::vector<Flight*> fl = *currFlights;
-            std::string currDest = fl[f]->getDestination();
-            if(rList->getList().count(currDest) != 1){
-                currFlights->erase(currFlights->begin() + f);
+        for(auto &f : currF){
+
+            if(rList->getList().count(f->getDestination()) == 1){
+                tempF.push_back(f);
             }
+
         }
 
-        int h = 0;
+        a->replaceFlights(tempF);
 
     }
 

@@ -39,9 +39,9 @@ bool operator<(const Airport a1, const Airport a2){
 //     return a1;
 // }
 
-std::vector<Flight*>* Airport::getFlights() {
+std::vector<Flight*> Airport::getFlights() {
 
-    return &flights_;
+    return flights_;
 
 }
 
@@ -72,5 +72,17 @@ bool Airport::getVisited() const{
 std::string Airport::getIATA() const{
 
     return IATA_;
+
+}
+
+void Airport::replaceFlights(std::vector<Flight*> newFlights){
+
+    flights_.clear();
+
+    for(Flight* f : newFlights){
+
+        flights_.push_back(f);
+
+    }
 
 }

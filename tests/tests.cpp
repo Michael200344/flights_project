@@ -11,10 +11,9 @@ TEST_CASE("USAdata AdjList Test") {
 
     for(auto& a : USAadj->getVector()){
 
-
         cout << a->getIATA() << ": " << endl;
 
-        for(auto& f : *a->getFlights()){
+        for(auto& f : a->getFlights()){
 
             cout << "Src: " << f->getSource() << " Dest: " << f->getDestination() << " Dist: " << f->getDistance() << std::endl;
 
@@ -25,6 +24,20 @@ TEST_CASE("USAdata AdjList Test") {
     REQUIRE(USAadj->getMap().size() == 35);
 
     // adj.printAdjList();
+}
+
+TEST_CASE("AdjList Duplicate Flights Test") {
+
+    std::string test = "ORD";
+    Airport* testA = USAadj->getMap()["ORD"];
+
+    for(auto &f : testA->getFlights()){
+
+        std::cout << f->getDestination() << ", ";
+
+    }
+    std::cout << std::endl;
+
 }
 
 TEST_CASE("trimList Test NULL") {
@@ -58,7 +71,7 @@ TEST_CASE("trimList Test") {
 
         cout << a->getIATA() << ": " << endl;
 
-        for(auto& f : *a->getFlights()){
+        for(auto& f : a->getFlights()){
 
             cout << "Src: " << f->getSource() << " Dest: " << f->getDestination() << " Dist: " << f->getDistance() << std::endl;
 
@@ -88,7 +101,7 @@ TEST_CASE("generateSample Trim Test") {
 
     for(auto &a : rList->getVector()){
 
-        for(auto &f : *a->getFlights()){
+        for(auto &f : a->getFlights()){
 
             REQUIRE(rList->getList().count(f->getDestination()) == 1);
 
@@ -101,7 +114,7 @@ TEST_CASE("generateSample Trim Test") {
 TEST_CASE("BFS Visited Test USA") {
 
     Airport* test = USAadj->getMap()["ORD"];
-    BFS(*USAadj, test);
+    auto result = BFS(*USAadj, test);
 
     for(Airport* a : USAadj->getVector()){
 
@@ -115,14 +128,29 @@ TEST_CASE("BFS Visited Test USA") {
 TEST_CASE("BFS Flights Test USA") {
 
     Airport* test = USAadj->getMap()["ORD"];
-    BFS(*USAadj, test);
+    auto result = BFS(*USAadj, test);
 
-    for(auto &f : *test->getFlights()){
+    for(auto &f : test->getFlights()){
 
         std::cout << f->getType() << std::endl;
         // REQUIRE(f->getType() == 'c' || f->getType() == 'd');
 
     }
+
+}
+
+TEST_CASE("BFS Result Test USA") {
+
+    Airport* test = USAadj->getMap()["ORD"];
+    auto result = BFS(*USAadj, test);
+
+    for(auto &a : result){
+
+        std::cout << a->getIATA() << ", ";
+
+    }
+
+    std::cout << std::endl;
 
 }
 
@@ -132,20 +160,67 @@ TEST_CASE("BFS Flights Test Small") {
     int start = rand()%5;
     Airport* beg = sample->getVector()[start];
 
-    BFS(*sample, beg);
+    auto result = BFS(*sample, beg);
 
     for(auto &a : sample->getVector()){
 
         std::cout << a->getIATA() << ": ";
-        REQUIRE(a->getVisited() == true);
+        // REQUIRE(a->getVisited() == true);
 
-        for(auto &f : *a->getFlights()){
+        for(auto &f : a->getFlights()){
 
             std::cout << "(" << f->getDestination() << ", " << f->getType() << ") ";
             // REQUIRE(f->getType() == 'c' || f->getType() == 'd');
 
         }
         std::cout << std::endl;
+
+    }
+
+    std::cout << "VISITED AIRPORTS: ";
+    for(auto &a : result){
+
+        std::cout << a->getIATA() << ", ";
+
+    }
+}
+
+TEST_CASE("BFS Test From Trimmed USA") {
+
+    vector<string> inputIATAs;
+
+    inputIATAs.push_back("ORD");
+    inputIATAs.push_back("DFW");
+    inputIATAs.push_back("LAX");
+    inputIATAs.push_back("JFK");
+    inputIATAs.push_back("IND");
+    inputIATAs.push_back("XXX");
+
+    pair<AdjList*, vector<string>> p;
+    p = USAadj->trimList(inputIATAs);
+    std::string test = "ORD";
+
+    std::vector<Airport*> result = BFS(*p.first, test);
+
+    for(auto &a : p.first->getVector()){
+
+        std::cout << a->getIATA() << ": ";
+        // REQUIRE(a->getVisited() == true);
+
+        for(auto &f : a->getFlights()){
+
+            std::cout << "(" << f->getDestination() << ", " << f->getType() << ") ";
+            // REQUIRE(f->getType() == 'c' || f->getType() == 'd');
+
+        }
+        std::cout << std::endl;
+
+    }
+
+    std::cout << "VISITED AIRPORTS: ";
+    for(auto &a : result){
+
+        std::cout << a->getIATA() << ", ";
 
     }
 

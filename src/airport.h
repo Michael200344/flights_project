@@ -18,7 +18,7 @@ class Airport {
         friend bool operator<(const Airport a1, const Airport a2);
         Airport operator()(const Airport a1, const Airport a2);
 
-        std::vector<Flight*>* getFlights();
+        std::vector<Flight*> getFlights();
         void setFlights(Flight* f);
 
         void setVisited();
@@ -26,6 +26,8 @@ class Airport {
 
         bool getVisited() const;
         std::string getIATA() const;
+
+        void replaceFlights(std::vector<Flight*> newFlights);
 
         std::vector<Flight*> flights_; // moved from private, not sure if this is correct
 
