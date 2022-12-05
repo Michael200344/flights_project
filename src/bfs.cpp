@@ -5,59 +5,52 @@
     This BFS function will take in our adjacency list and mark each flight as discovery or cross 
 */
 
-BFS::BFS(AdjList &adjlist){
+void BFS(AdjList &adjlist, Airport* start){
 
-    auto list = adjlist.getList();
-    // Iterator beg = list.begin();
+    // std::cout << "BFS Test2 reached" << std::endl;
 
-    for(Airport a : list){ // sets each vertex to unvisited
+    auto list = adjlist.getVector();
 
-        a.setNotVisited();
-        std::vector<Flight*> currFlights = a.getFlights(); // fetches flights for each airport
+    for(Airport* a : list){ // sets each vertex to unvisited
 
-        for(Flight* f : currFlights){
+        a->setNotVisited();
+        std::vector<Flight*>* currFlights = a->getFlights(); // fetches flights for each airport
+
+        for(Flight* f : *currFlights){
 
             f->setType('u'); // sets all flights to unexplored  ***** TIME COMPLEXITY CONCERN?
 
         }
     }
 
-    for(Airport na : list){
-
-        if(!na.getVisited()){ // if a vertex has not yet been visited, search it - loop ensures even unconnected components are accounted for
-            BFS(adjlist, na);
-        }
-
-    }
-
-}
-
-BFS::BFS(AdjList &adjlist, Airport start){
-
-    std::queue<Airport> q;
-    start.setVisited(); // initializing queue, marking start as visited, and pushing it
+    std::queue<Airport*> q;
+    start->setVisited(); // initializing queue, marking start as visited, and pushing it
     q.push(start);
 
     while(!q.empty()){ // until every node is visited
 
-        Airport currAirport = q.front(); // fetch current airport
+        Airport* currAirport = q.front(); // fetch current airport
         q.pop();
 
-        std::vector<Flight*> currFlights = currAirport.getFlights();  // gets current flights
+        std::vector<Flight*>* currFlights = currAirport->getFlights();  // gets current flights
         std::map<std::string, Airport*> currMap = adjlist.getMap();
 
-        for(Flight* f : currFlights){
+        for(Flight* f : *currFlights){
+
+            // std::cout << f->getSource() << std::endl;
 
             std::string adjacentIATA = f->getDestination(); // gets adjacent IATA for each flight
-            Airport adjacentAirport = *(currMap).at(adjacentIATA); // finds actual airport object
+            Airport* adjacentAirport = (currMap).at(adjacentIATA); // finds actual airport object
 
-            auto sourceIATA = f->getSource();
-            auto sourceAirport = *(currMap).at(sourceIATA); // get source IATA and use it to find airport
+            // auto sourceIATA = f->getSource();
+            // auto sourceAirport = *(currMap).at(sourceIATA); // get source IATA and use it to find airport
 
-            if(!adjacentAirport.getVisited()){ // if adjacent airport isnt visited
+            if(!adjacentAirport->getVisited()){ // if adjacent airport isnt visited
+
+                // std::cout << "New Airport" << std::endl;
 
                 f->setType('d');
-                adjacentAirport.setVisited(); // set discovery edge and graph visited
+                adjacentAirport->setVisited(); // set discovery edge and graph visited
                 q.push(adjacentAirport); // add next vertex to queue
 
             }

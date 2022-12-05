@@ -14,7 +14,7 @@ TEST_CASE("USAdata AdjList Test") {
 
         cout << a->getIATA() << ": " << endl;
 
-        for(auto& f : a->getFlights()){
+        for(auto& f : *a->getFlights()){
 
             cout << "Src: " << f->getSource() << " Dest: " << f->getDestination() << " Dist: " << f->getDistance() << std::endl;
 
@@ -58,7 +58,7 @@ TEST_CASE("trimList Test") {
 
         cout << a->getIATA() << ": " << endl;
 
-        for(auto& f : a->getFlights()){
+        for(auto& f : *a->getFlights()){
 
             cout << "Src: " << f->getSource() << " Dest: " << f->getDestination() << " Dist: " << f->getDistance() << std::endl;
 
@@ -71,10 +71,9 @@ TEST_CASE("trimList Test") {
 
 }
 
-TEST_CASE("generateSample Test") {
+TEST_CASE("generateSample Size Test") {
 
     size_t n = rand() % 15 + 1;
-
     AdjList* rList = USAadj->generateSample(n);
 
     REQUIRE(rList->getVector().size() == n);
@@ -82,11 +81,72 @@ TEST_CASE("generateSample Test") {
 
 }
 
+TEST_CASE("generateSample Trim Test") {
 
-// TEST_CASE("BFS Test") {
+    size_t n = rand() % 15 + 1;
+    AdjList* rList = USAadj->generateSample(n);
 
-//     // Airport* test = 
+    for(auto &a : rList->getVector()){
 
-//     auto bfs = new BFS(USAadj);
+        for(auto &f : *a->getFlights()){
 
-// }
+            REQUIRE(rList->getList().count(f->getDestination()) == 1);
+
+        }
+
+    }
+
+}
+
+TEST_CASE("BFS Visited Test USA") {
+
+    Airport* test = USAadj->getMap()["ORD"];
+    BFS(*USAadj, test);
+
+    for(Airport* a : USAadj->getVector()){
+
+        std::cout << a->getIATA() << " " << a->getVisited() << std::endl;
+        REQUIRE(a->getVisited() == 1);
+
+    }
+
+}
+
+TEST_CASE("BFS Flights Test USA") {
+
+    Airport* test = USAadj->getMap()["ORD"];
+    BFS(*USAadj, test);
+
+    for(auto &f : *test->getFlights()){
+
+        std::cout << f->getType() << std::endl;
+        // REQUIRE(f->getType() == 'c' || f->getType() == 'd');
+
+    }
+
+}
+
+TEST_CASE("BFS Flights Test Small") {
+
+    AdjList* sample = USAadj->generateSample(5);
+    int start = rand()%5;
+    Airport* beg = sample->getVector()[start];
+
+    BFS(*sample, beg);
+
+    for(auto &a : sample->getVector()){
+
+        std::cout << a->getIATA() << ": ";
+        REQUIRE(a->getVisited() == true);
+
+        for(auto &f : *a->getFlights()){
+
+            std::cout << "(" << f->getDestination() << ", " << f->getType() << ") ";
+            // REQUIRE(f->getType() == 'c' || f->getType() == 'd');
+
+        }
+        std::cout << std::endl;
+
+    }
+
+}
