@@ -15,4 +15,5 @@
 // };
 
 // void BFS(AdjList &adjlist);
-void BFS(AdjList &adjlist, Airport* start);
+std::vector<Airport*> BFS(AdjList &adjlist, Airport* start);
+std::vector<Airport*> BFS(AdjList &adjlist, std::string IATA);

@@ -4,19 +4,27 @@
 /*
     This BFS function will take in our adjacency list and mark each flight as discovery or cross 
 */
+std::vector<Airport*> BFS(AdjList &adjlist, std::string IATA){
 
-void BFS(AdjList &adjlist, Airport* start){
+    std::vector<Airport*> result;
 
-    // std::cout << "BFS Test2 reached" << std::endl;
+    result = BFS(adjlist, adjlist.getMap()[IATA]);
+    return result;
+
+}
+
+std::vector<Airport*> BFS(AdjList &adjlist, Airport* start){
+
+    std::vector<Airport*> result;
 
     auto list = adjlist.getVector();
 
     for(Airport* a : list){ // sets each vertex to unvisited
 
         a->setNotVisited();
-        std::vector<Flight*>* currFlights = a->getFlights(); // fetches flights for each airport
+        std::vector<Flight*> currFlights = a->getFlights(); // fetches flights for each airport
 
-        for(Flight* f : *currFlights){
+        for(Flight* f : currFlights){
 
             f->setType('u'); // sets all flights to unexplored  ***** TIME COMPLEXITY CONCERN?
 
@@ -31,19 +39,15 @@ void BFS(AdjList &adjlist, Airport* start){
 
         Airport* currAirport = q.front(); // fetch current airport
         q.pop();
+        result.push_back(currAirport);
 
-        std::vector<Flight*>* currFlights = currAirport->getFlights();  // gets current flights
+        std::vector<Flight*> currFlights = currAirport->getFlights();  // gets current flights
         std::map<std::string, Airport*> currMap = adjlist.getMap();
 
-        for(Flight* f : *currFlights){
-
-            // std::cout << f->getSource() << std::endl;
+        for(Flight* f : currFlights){
 
             std::string adjacentIATA = f->getDestination(); // gets adjacent IATA for each flight
             Airport* adjacentAirport = (currMap).at(adjacentIATA); // finds actual airport object
-
-            // auto sourceIATA = f->getSource();
-            // auto sourceAirport = *(currMap).at(sourceIATA); // get source IATA and use it to find airport
 
             if(!adjacentAirport->getVisited()){ // if adjacent airport isnt visited
 
@@ -76,6 +80,7 @@ void BFS(AdjList &adjlist, Airport* start){
 
     }
 
+    return result;
 }
 
 
