@@ -1,3 +1,15 @@
+CS 225 Final Project: Open Flights
+By: Dirgh Shah, Jacob Poeschel, Michael Rheintgen, Branden Kooper
+
+Project Objective:
+For the CS 225 final project, our group decided to analyze the dataset of airports and flight routes in the United States by creating a graph structure and implementing BFS and Dijkstra's algorithm to find and return the most efficient route between 2 chosen airports.
+
+
+Data Processing:
+The first step was to collect and clean the data. We obtained airports and flight routes data from https://openflights.org/data.html. The data which we downloaded from openflights.org contained information about 67663 routes between 3321 airports on 548 airlines. To implement the graph structure, we needed the location of each airport (latitude and longitude coordinates), the source and destination airport IATA codes and the 2 letter airline IATA codes. To get this information, we first opened the sirports and routes csv file in python as a pandas dataframe and merged bthem. Then we filtered out any duplicate data points and any data with NULL or missing IATA codes. The next step was to drop the unnecessary data columns like the callsign, callshare information, equipment and airline alias. We then filtered out and retained only the flight routes between US airports. After cleaning the data, we used Haversine's formula to calculte the distance between source and destination airport with the given latitude and longitude information and added it as a seperate column. We then exported the dataframe into a csv which was later used as the source data to create a graph in C++. The final data csv file cointained 4 columns: Airline IATA, Source Airport IATA, Destination Airport IATA and Distance (km).
+
+Graph Building:
+
 Algorithms
 
 Adjacency List Algorithms:
@@ -47,3 +59,9 @@ BFS Algorithms:
   possible that some airports aren't all connected, which is normal. Finally, the same test is done with the user decided trimmed list. All of these tests display
   the expected edges and visited vertices.
 
+
+
+
+
+Conclusion / Leading Question Response:
+Ultimately, our goal was to analyze a large database of flight and airport data. Specifically, we aimed to complete a BFS search algorithm, a shortest path algorithm, and a graph visualization. In the end, we were largely successful. We created each of these algorithms successfully for our trimmed data set of the 35 most popular U.S. airports. Our functions allow us to input a starting airport and discover which airports are reachable and even the shortest path between it and another given airport. However, our understanding of BFS at the time of our proposal was not strong enough to understand how it would function in our project. We assumed it would be used to return a list of the closest airports to a given airport. However, this information is clearly just accessible with our adjacency list, and isn't particularly useful. Instead, our BFS marks edges as discovery or cross and returns a vector that contains the order in which airports are visited during our search. Overall, this project lead to a major improvement in our programming skills as well as a clear increase in our teamwork and ability to understand how to create real world projects.
