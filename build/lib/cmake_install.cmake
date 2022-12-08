@@ -1,4 +1,4 @@
-# Install script for directory: /workspaces/CS 225/flights_project/lib
+# Install script for directory: /workspaces/CS225/flights_project/lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

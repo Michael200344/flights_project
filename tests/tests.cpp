@@ -2,10 +2,11 @@
 #include <iostream>
 #include "adjacency_list.h"
 #include "bfs.h"
+#include "iddfs.h"
 
 using namespace std;
 
-AdjList* USAadj = new AdjList("/workspaces/CS 225/flights_project/dataFiles/usadata.csv");
+AdjList* USAadj = new AdjList("/workspaces/CS225/flights_project/dataFiles/usadata.csv");
 
 TEST_CASE("USAdata AdjList Test") {
 
@@ -159,6 +160,7 @@ TEST_CASE("BFS Flights Test Small") {
     AdjList* sample = USAadj->generateSample(5);
     int start = rand()%5;
     Airport* beg = sample->getVector()[start];
+    std::cout << "Starting Airport: " << beg -> getIATA() << std::endl;
 
     auto result = BFS(*sample, beg);
 
@@ -224,4 +226,77 @@ TEST_CASE("BFS Test From Trimmed USA") {
 
     }
 
+}
+
+// TEST_CASE("iddfs Flights Test Small") {
+//     AdjList* sample = USAadj->generateSample(5);
+//     int startIdx = rand()%5;
+//     int targetIdx = rand()%5;
+//     Airport* start = sample -> getVector().at(startIdx);
+//     Airport* target = sample -> getVector().at(targetIdx);
+//     int x = 3;
+//     auto result = iddfs(start, target, x, *sample);
+
+//     for(auto &a : sample->getVector()){
+
+//         std::cout << a->getIATA() << ": ";
+//         // REQUIRE(a->getVisited() == true);
+
+//         for(auto &f : a->getFlights()){
+
+//             std::cout << f->getDestination() << " ";
+//             // REQUIRE(f->getType() == 'c' || f->getType() == 'd');
+
+//         }
+//         std::cout << std::endl;
+//     }
+
+//     if (!result.empty()) {
+//         std::cout << "It is possible to reach " << target -> getIATA() << " from " << start -> getIATA() << " In " << x << " Flights. The corresponding flight path is below" << std::endl;
+//     } else {
+//         std::cout << "It is not possible to reach " << target -> getIATA() << " from " << start -> getIATA() << " In " << x << " Flights." << std::endl;
+//     }
+
+//     std::cout << "FLIGHT PATH: ";
+//     for(auto &a : result){
+//         std::cout << a->getIATA() << ", ";
+//     }
+// }
+
+TEST_CASE("iddfs Flights Test USA") {
+    int startIdx = rand() % USAadj -> getVector().size();
+    int targetIdx = rand() % USAadj -> getVector().size();
+    Airport* start = USAadj -> getVector().at(startIdx);
+    Airport* target = USAadj -> getVector().at(targetIdx);
+    int x = 2;
+    auto result = iddfs(start, target, x, *USAadj);
+
+    // for (const auto& k : USAadj -> getMap()) {
+    //     std::cout << k.first << ": " << k.second -> getIATA() << std::endl;
+    // }
+
+    for(auto &a : USAadj->getVector()){
+
+        std::cout << a->getIATA() << ": ";
+        // REQUIRE(a->getVisited() == true);
+
+        for(auto &f : a->getFlights()){
+
+            std::cout << f->getDestination() << " ";
+            // REQUIRE(f->getType() == 'c' || f->getType() == 'd');
+
+        }
+        std::cout << std::endl;
+    }
+
+    if (result) {
+        std::cout << "It is possible to reach " << target -> getIATA() << " from " << start -> getIATA() << " In " << getNumFlightsRequired() << " Flights." << std::endl;
+    } else {
+        std::cout << "It is not possible to reach " << target -> getIATA() << " from " << start -> getIATA() << " In " << x << " Flights." << std::endl;
+    }
+
+    std::cout << "IIDS SCAN PATH: ";
+    for(auto &a : getOrder()){
+        std::cout << a->getIATA() << ", ";
+    }
 }

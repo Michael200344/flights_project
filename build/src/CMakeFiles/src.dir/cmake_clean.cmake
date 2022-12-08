@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/src.dir/bfs.cpp.o.d"
   "CMakeFiles/src.dir/flight.cpp.o"
   "CMakeFiles/src.dir/flight.cpp.o.d"
+  "CMakeFiles/src.dir/iddfs.cpp.o"
+  "CMakeFiles/src.dir/iddfs.cpp.o.d"
   "CMakeFiles/src.dir/utils.cpp.o"
   "CMakeFiles/src.dir/utils.cpp.o.d"
   "libsrc.a"

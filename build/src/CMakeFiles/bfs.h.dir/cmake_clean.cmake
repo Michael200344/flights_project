@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/bfs.h.dir/bfs.cpp.o.d"
   "CMakeFiles/bfs.h.dir/flight.cpp.o"
   "CMakeFiles/bfs.h.dir/flight.cpp.o.d"
+  "CMakeFiles/bfs.h.dir/iddfs.cpp.o"
+  "CMakeFiles/bfs.h.dir/iddfs.cpp.o.d"
   "CMakeFiles/bfs.h.dir/utils.cpp.o"
   "CMakeFiles/bfs.h.dir/utils.cpp.o.d"
   "libbfs.h.a"
