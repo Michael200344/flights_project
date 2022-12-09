@@ -47,3 +47,9 @@ BFS Algorithms:
   possible that some airports aren't all connected, which is normal. Finally, the same test is done with the user decided trimmed list. All of these tests display
   the expected edges and visited vertices.
 
+
+
+
+
+Conclusion / Leading Question Response:
+Ultimately, our goal was to analyze a large database of flight and airport data. Specifically, we aimed to complete a BFS search algorithm, a shortest path algorithm, and a graph visualization. In the end, we were largely successful. We created each of these algorithms successfully for our trimmed data set of the 35 most popular U.S. airports. Our functions allow us to input a starting airport and discover which airports are reachable and even the shortest path between it and another given airport. However, our understanding of BFS at the time of our proposal was not strong enough to understand how it would function in our project. We assumed it would be used to return a list of the closest airports to a given airport. However, this information is clearly just accessible with our adjacency list, and isn't particularly useful. Instead, our BFS marks edges as discovery or cross and returns a vector that contains the order in which airports are visited during our search. Overall, this project lead to a major improvement in our programming skills as well as a clear increase in our teamwork and ability to understand how to create real world projects.
