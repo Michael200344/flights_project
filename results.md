@@ -31,3 +31,19 @@ respective airport. Each airport contains a string IATA, and a vector of Flight*
   This algorithm takes an int n and generates a new adjlist with n random airports from the USA adj. 
   
   This algorithm is tested to guarantee that the size of the resulting list = n, and printed for visual confirmation.
+  
+BFS Algorithms:
+1) BFS (INPUT: AdjList, IATA) (OUTPUT: vector of airports visited)
+  This algorithm is a helper for the main BFS (2). It takes an IATA and uses the adjmap to get the proper airport starting point, and then passes both to the main
+  function.
+  
+2) BFS (INPUT: AdjList, Airport*) (OUTPUT: vector of airports visited)
+  Standard BFS algorithm. Uses a queue to keep track of the order that airports should be visited. Every time that an airport is visited, it is added to the vector
+  which is returned. As the function loops through every airport, every flight is also checked and marked as either a discovery or cross edge. 
+  
+  First, BFS is tested on the USA AdjList. The size is checked and each flight is checked to make sure none are still type 'u' unexplored. Then, each IATA is printed
+  from the results to show that each airport is visited. Then, BFS is tested with a random sample of user chosen size n using generate sample. The result of this
+  is also printed for visual confirmation that edges are marked. **NOTE** It is possible that some airports are not visited. When generating a small sample, it is
+  possible that some airports aren't all connected, which is normal. Finally, the same test is done with the user decided trimmed list. All of these tests display
+  the expected edges and visited vertices.
+
