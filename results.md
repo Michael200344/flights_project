@@ -2,7 +2,7 @@ CS 225 Final Project: Open Flights
 By: Dirgh Shah, Jacob Poeschel, Michael Rheintgen, Branden Kooper
 
 Project Objective:
-For the CS 225 final project, our group decided to analyze the dataset of airports and flight routes in the United States by creating a graph structure and implementing BFS and Dijkstra's algorithm to find and return the most efficent route between 2 chosen airports.
+For the CS 225 final project, our group decided to analyze the dataset of airports and flight routes in the United States by creating a graph structure and implementing BFS and Dijkstra's algorithm to find and return the most efficient route between 2 chosen airports.
 
 
 Data Processing:
