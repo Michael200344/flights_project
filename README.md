@@ -37,6 +37,10 @@ git clone https://github.com/Michael200344/flights_project.git
 ```
 
 ### First you will need to edit the code:
+Open the tests.cpp file in the tests folder. In that file, you will need to change the file path and add the appropriate file path. This can be done by right clicking on the usadata.csv and copying the path. This path should replace the path in line 8 of the code in the brackets - 
+```
+AdjList* USAadj = new AdjList("insert file path here");
+```
 
 
 ### Second to build the program:
