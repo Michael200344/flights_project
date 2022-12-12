@@ -299,7 +299,8 @@ CMakeFiles/test.dir/tests/tests.cpp.o: ../tests/tests.cpp \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/debug/deque \
   /usr/include/c++/11/bits/stl_heap.h \
-  /usr/include/c++/11/bits/stl_queue.h
+  /usr/include/c++/11/bits/stl_queue.h \
+  ../src/iddfs.h
 
 
 /usr/include/c++/11/debug/deque:
@@ -353,6 +354,8 @@ CMakeFiles/test.dir/tests/tests.cpp.o: ../tests/tests.cpp \
 /usr/include/c++/11/debug/map.h:
 
 /usr/include/c++/11/debug/map:
+
+../src/iddfs.h:
 
 /usr/include/c++/11/bits/stl_multimap.h:
 

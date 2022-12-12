@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/flight.cpp.dir/bfs.cpp.o.d"
   "CMakeFiles/flight.cpp.dir/flight.cpp.o"
   "CMakeFiles/flight.cpp.dir/flight.cpp.o.d"
+  "CMakeFiles/flight.cpp.dir/iddfs.cpp.o"
+  "CMakeFiles/flight.cpp.dir/iddfs.cpp.o.d"
   "CMakeFiles/flight.cpp.dir/utils.cpp.o"
   "CMakeFiles/flight.cpp.dir/utils.cpp.o.d"
   "libflight.cpp.a"
