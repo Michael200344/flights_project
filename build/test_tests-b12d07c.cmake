@@ -1,5 +1,7 @@
 add_test( [==[USAdata AdjList Test]==] /workspaces/CS225/flights_project/build/test [==[USAdata AdjList Test]==]  )
 set_tests_properties( [==[USAdata AdjList Test]==] PROPERTIES WORKING_DIRECTORY /workspaces/CS225/flights_project/build)
+add_test( [==[Ohare AdjList Test]==] /workspaces/CS225/flights_project/build/test [==[Ohare AdjList Test]==]  )
+set_tests_properties( [==[Ohare AdjList Test]==] PROPERTIES WORKING_DIRECTORY /workspaces/CS225/flights_project/build)
 add_test( [==[AdjList Duplicate Flights Test]==] /workspaces/CS225/flights_project/build/test [==[AdjList Duplicate Flights Test]==]  )
 set_tests_properties( [==[AdjList Duplicate Flights Test]==] PROPERTIES WORKING_DIRECTORY /workspaces/CS225/flights_project/build)
 add_test( [==[trimList Test NULL]==] /workspaces/CS225/flights_project/build/test [==[trimList Test NULL]==]  )
@@ -22,4 +24,4 @@ add_test( [==[BFS Test From Trimmed USA]==] /workspaces/CS225/flights_project/bu
 set_tests_properties( [==[BFS Test From Trimmed USA]==] PROPERTIES WORKING_DIRECTORY /workspaces/CS225/flights_project/build)
 add_test( [==[iddfs Flights Test USA]==] /workspaces/CS225/flights_project/build/test [==[iddfs Flights Test USA]==]  )
 set_tests_properties( [==[iddfs Flights Test USA]==] PROPERTIES WORKING_DIRECTORY /workspaces/CS225/flights_project/build)
-set( test_TESTS [==[USAdata AdjList Test]==] [==[AdjList Duplicate Flights Test]==] [==[trimList Test NULL]==] [==[trimList Test]==] [==[generateSample Size Test]==] [==[generateSample Trim Test]==] [==[BFS Visited Test USA]==] [==[BFS Flights Test USA]==] [==[BFS Result Test USA]==] [==[BFS Flights Test Small]==] [==[BFS Test From Trimmed USA]==] [==[iddfs Flights Test USA]==])
+set( test_TESTS [==[USAdata AdjList Test]==] [==[Ohare AdjList Test]==] [==[AdjList Duplicate Flights Test]==] [==[trimList Test NULL]==] [==[trimList Test]==] [==[generateSample Size Test]==] [==[generateSample Trim Test]==] [==[BFS Visited Test USA]==] [==[BFS Flights Test USA]==] [==[BFS Result Test USA]==] [==[BFS Flights Test Small]==] [==[BFS Test From Trimmed USA]==] [==[iddfs Flights Test USA]==])
