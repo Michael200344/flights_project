@@ -9,7 +9,7 @@
 ## Deliverables (Loaction - Main Branch):
 * [Written Report](https://github.com/Michael200344/flights_project/blob/main/results.md)
 * [Final Presentation Video](https://www.youtube.com/watch?v=uo10FYnsr80)
-* [Final Presentation Slides]()
+* [Final Presentation Slides](https://docs.google.com/presentation/d/152L3OpUhIL_I8kCJ49sKxoUqISf-BR6Pm51Z7DtYUeI/edit#slide=id.gc6f75fceb_0_0)
 
 ## Project Overview:
 Our program uses data from [Open Flights](https://openflights.org/data.html) to find the shortest path between two airports by using BFS Traversal and Dijkstra's Algorithm.
