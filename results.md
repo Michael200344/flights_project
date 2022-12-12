@@ -44,6 +44,15 @@ respective airport. Each airport contains a string IATA, and a vector of Flight*
   
   This algorithm is tested to guarantee that the size of the resulting list = n, and printed for visual confirmation.
   
+Dijkstra Algorithm:
+1) Dijkstra (INPUT: Adjlist, IATA, IATA) (OUTPUT: pair, first containing vector of airports visited on path, second containing total distance traveled)
+This algorithm is helper for Dijkstra. It converts the IATA into a Airport* and called other dijkstra.
+
+2) Dijkstra (INPUT: Adjlist, Airport*, Airport*) (OUTPUT: pair, first containing vector of airports visited on path, second containing total distance traveled)
+This algorithm is the main Dijkstra algorithm. It is completed in the standard way of marking every vertex as infinity then covering each unvisited edge updating the shortest distance and returning the path, from start to dest along with the total distance needed.
+
+There are several tests of the Dijkstra algorithm, I (Branden) discovered some potental errors on very long edges but they are few and far inbetween and was tested multiple times on several different edges returning the right path. It was completed in what I estimate to be O(nlogn + m) runtime.
+
 BFS Algorithms:
 1) BFS (INPUT: AdjList, IATA) (OUTPUT: vector of airports visited)
   This algorithm is a helper for the main BFS (2). It takes an IATA and uses the adjmap to get the proper airport starting point, and then passes both to the main
