@@ -283,7 +283,7 @@ TEST_CASE("iddfs Flights Test USA") {
     int targetIdx = rand() % USAadj -> getVector().size();
     Airport* start = USAadj -> getVector().at(startIdx);
     Airport* target = USAadj -> getVector().at(targetIdx);
-    int x = 2;
+    int x = 8;
     auto result = iddfs(start, target, x, *USAadj);
 
     // for (const auto& k : USAadj -> getMap()) {
