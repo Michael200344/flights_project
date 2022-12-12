@@ -300,8 +300,13 @@ CMakeFiles/test.dir/tests/tests.cpp.o: ../tests/tests.cpp \
   /usr/include/c++/11/debug/deque \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/stl_queue.h \
-  ../src/iddfs.h
+  ../src/iddfs.h \
+  ../src/dijkstra.h \
+  /usr/include/c++/11/stack \
+  /usr/include/c++/11/bits/stl_stack.h
 
+
+/usr/include/c++/11/stack:
 
 /usr/include/c++/11/debug/deque:
 
@@ -563,6 +568,8 @@ CMakeFiles/test.dir/tests/tests.cpp.o: ../tests/tests.cpp \
 
 /usr/include/features-time64.h:
 
+../src/dijkstra.h:
+
 /usr/include/catch2/catch_user_config.hpp:
 
 /usr/include/c++/11/debug/safe_sequence.tcc:
@@ -784,6 +791,8 @@ CMakeFiles/test.dir/tests/tests.cpp.o: ../tests/tests.cpp \
 /usr/include/c++/11/debug/safe_base.h:
 
 /usr/include/c++/11/cassert:
+
+/usr/include/c++/11/bits/stl_stack.h:
 
 /usr/include/catch2/internal/catch_decomposer.hpp:
 

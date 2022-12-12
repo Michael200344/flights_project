@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/airport.cpp.dir/airport.cpp.o.d"
   "CMakeFiles/airport.cpp.dir/bfs.cpp.o"
   "CMakeFiles/airport.cpp.dir/bfs.cpp.o.d"
+  "CMakeFiles/airport.cpp.dir/dijkstra.cpp.o"
+  "CMakeFiles/airport.cpp.dir/dijkstra.cpp.o.d"
   "CMakeFiles/airport.cpp.dir/flight.cpp.o"
   "CMakeFiles/airport.cpp.dir/flight.cpp.o.d"
   "CMakeFiles/airport.cpp.dir/iddfs.cpp.o"

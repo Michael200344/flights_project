@@ -1,2 +1,2 @@
-/usr/bin/ar qc libiddfs.h.a CMakeFiles/iddfs.h.dir/adjacency_list.cpp.o CMakeFiles/iddfs.h.dir/airport.cpp.o CMakeFiles/iddfs.h.dir/bfs.cpp.o CMakeFiles/iddfs.h.dir/flight.cpp.o CMakeFiles/iddfs.h.dir/iddfs.cpp.o CMakeFiles/iddfs.h.dir/utils.cpp.o
+/usr/bin/ar qc libiddfs.h.a CMakeFiles/iddfs.h.dir/adjacency_list.cpp.o CMakeFiles/iddfs.h.dir/airport.cpp.o CMakeFiles/iddfs.h.dir/bfs.cpp.o CMakeFiles/iddfs.h.dir/dijkstra.cpp.o CMakeFiles/iddfs.h.dir/flight.cpp.o CMakeFiles/iddfs.h.dir/iddfs.cpp.o CMakeFiles/iddfs.h.dir/utils.cpp.o
 /usr/bin/ranlib libiddfs.h.a
