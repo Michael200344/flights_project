@@ -3,10 +3,68 @@
 #include "adjacency_list.h"
 #include "bfs.h"
 #include "iddfs.h"
+#include "dijkstra.h"
 
 using namespace std;
 
 AdjList* USAadj = new AdjList("/workspaces/CS225/flights_project/dataFiles/usadata.csv");
+
+TEST_CASE("Dijkstra Test USA") {
+
+    // 4B,LAS,LAX,379.9942734236406
+    // 4B,LAX,LAS,379.9942734236406
+
+    Airport* start = USAadj->getMap()["LAX"];
+    Airport* dest = USAadj->getMap()["LAS"];
+
+    auto result = Dijkstras(*USAadj, start, dest);
+
+    std::cout << "Total dist: " << result.second << std::endl;
+    REQUIRE((int)result.second == 379);
+    std::cout << "Airports Used To Reach Dest " << '\n';
+    for(auto &f : result.first) {
+        std::cout << f->getIATA() << " ";
+    }
+    std::cout << std::endl;
+
+}
+
+TEST_CASE("Dijkstra Test USA 2") {
+
+    Airport* start = USAadj->getMap()["ORD"];
+    Airport* dest = USAadj->getMap()["PDX"];
+
+    auto result = Dijkstras(*USAadj, start, dest);
+
+    std::cout << "Total dist: " << result.second << std::endl;
+    REQUIRE((int)result.second == 2791);
+    std::cout << "Airports Used To Reach Dest " << '\n';
+    for(auto &f : result.first) {
+
+        std::cout << f->getIATA() << " ";
+
+    }
+    std::cout << std::endl;
+}
+
+TEST_CASE("Dijkstra Test USA 3") {
+
+    Airport* start = USAadj->getMap()["LAX"];
+    Airport* dest = USAadj->getMap()["CVG"];
+
+    auto result = Dijkstras(*USAadj, start, dest);
+
+    std::cout << "Total dist: " << result.second << std::endl;
+    REQUIRE((int)result.second == 3050);
+    std::cout << "Airports Used To Reach Dest " << '\n';
+
+    for(auto &f : result.first) {
+
+        std::cout << f->getIATA() << " ";
+
+    }
+    std::cout << std::endl;
+}
 
 TEST_CASE("USAdata AdjList Test") {
 
