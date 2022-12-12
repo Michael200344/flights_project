@@ -58,9 +58,23 @@ NOTE: due to the amount of content printed for each test, it is necessary to run
 ```
 ./test "Test Name Here"
 ```
+```
 for example: ./test "BFS Flights Test"
+```
 
 Your results will export automatically in terminal window.
 
 ## Results Example:
-
+```
+root@3325c2f1ac5e:/workspaces/CS 225/flights_project/build# ./test "BFS Test From Trimmed USA"
+Filters: BFS Test From Trimmed USA
+Randomness seeded to: 1380935730
+ORD: (DFW, d) (IND, d) (JFK, d) (LAX, d) 
+DFW: (IND, c) (JFK, c) (LAX, c) (ORD, c) 
+LAX: (DFW, c) (IND, c) (JFK, c) (ORD, c) 
+JFK: (DFW, c) (IND, c) (LAX, c) (ORD, c) 
+IND: (DFW, c) (JFK, c) (LAX, c) (ORD, c) 
+VISITED AIRPORTS: ORD, DFW, IND, JFK, LAX, ===============================================================================
+test cases: 1 | 1 passed
+assertions: - none -
+```
