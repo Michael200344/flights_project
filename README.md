@@ -17,12 +17,11 @@ Our program uses data from [Open Flights](https://openflights.org/data.html) to 
 ## Github Organization:
 
 The files and folders that can be found in the main branch are:
-* build: This folder cointing files required to build and run the program.
-* dataFiles: This folder cointains all the raw data (airportsData.txt, airports_processed.csv, distance_data.csv, routesData.txt, routes_processed.csv), the sample test data (used_data.csv) and the processed data containg all the flights in the US including distances between each airport (usadata.csv).
+* build: This folder contains files required to build and run the program.
+* dataFiles: This folder contains all the raw data (airportsData.txt, airports_processed.csv, distance_data.csv, routesData.txt, routes_processed.csv), the sample test data (used_data.csv) and the processed data containg all the flights in the US including distances between each airport (usadata.csv).
 * entry: This folder contains the main.cpp file which is executed to run the program.
-* lib:
 * src: This folder contains all the code used to make the graph and execute the algorithms. The airport.h and airport.cpp files store the code used to make an ariport object which stores the airport IATA code and a vector of all the flights from that airport. Flights.h and flights.cpp cointain the code for the flight object which stores the source and destination airport, the airline and the distance between the airport. The adjacency_list.h and adjacency_list.cpp use the 2 objects creates to make a weighted directed graph using adjecency lists. The utils files were taken from the last CS225 MP whse functions were used to read data from a csv file.
-* tests: This coints the test file with all the tests used to test if our programs work.
+* tests: This contains the test file with all the tests used to test if our programs work.
 * Project_Proposal.md: Our groups project proposal.
 * Team_Contract.md: Our groups team contract.
 * dataprocessing.py: The python code whihc was used to process and clean the raw data.
@@ -54,10 +53,12 @@ make
 ```
 in the terminal.
 
-Then to test the program you need to run the tests.cpp file which can me done by inputting this in your terminal:
+### Testing the program:
+NOTE: due to the amount of content printed for each test, it is necessary to run each test individually with the command
 ```
-./test
+./test "Test Name Here"
 ```
+for example: ./test "BFS Flights Test"
 
 Your results will export automatically in terminal window.
 
