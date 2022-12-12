@@ -1,16 +1,12 @@
 #include "Dijkstra.h"
 #include "airport.h"
 #define INT_MAX 10000000
-// vector<Airport> dijkstraShortestPath(Airport* start, Airport* dest, AdjList* graph) {
-//     //go thru after dijkstra and find
-//     return vector<Airport>();
-// }
+
 pair<vector<Airport*>, float> Dijkstras(AdjList& graph, string start, string dest) {
     return Dijkstras(graph, graph.getMap()[start], graph.getMap()[dest]);
 }
 
 pair<vector<Airport*>, float> Dijkstras(AdjList& graph, Airport* start, Airport* dest) {
-    // // cout << "in dijkstra" << endl;
 
 
     if (start->getFlights().empty() || dest->getFlights().empty()) {
@@ -31,8 +27,6 @@ pair<vector<Airport*>, float> Dijkstras(AdjList& graph, Airport* start, Airport*
     int start_idx = 0;
     int dest_idx = 0;
     
-    // // cout << "before inf" << endl;
-
     for(Airport* a : list) { // sets each distance to inf and inshortest to false
         if (a == start) {
             start_idx = idx;
@@ -47,7 +41,6 @@ pair<vector<Airport*>, float> Dijkstras(AdjList& graph, Airport* start, Airport*
     }
 
 
-    // cout << "after inf  + start idx -> " << start_idx << " + dest idx -> " << dest_idx << endl;
 
 
     previous[dest_idx] = start_idx;
@@ -56,36 +49,27 @@ pair<vector<Airport*>, float> Dijkstras(AdjList& graph, Airport* start, Airport*
 
     int currAirport = start_idx;
     
-    // // cout << "before while" << endl;
 
     while (!toVisit.empty()) {
         float minDistance = INT_MAX;
         int minIndex = 0;
        
-       // // cout << "before toVisit Iteration" << endl;
 
         int j = 0;
         for(int curr : toVisit) {
             auto currDist = terminals[j]->getIATA();
             if (distance[currDist] < minDistance) {
-                // // cout << "In toVisit If" << endl;
                 minDistance = distance[currDist];
                 minIndex = j;
             }
             j++;
         }
 
-        // // cout << "after toVisit Iteration" << endl;
 
 
         currAirport = toVisit[minIndex];
-        // // cout << "Before Erase: " << toVisit.size() << endl;
         toVisit.erase(toVisit.begin() + minIndex);
-        // // cout << "After Erase: " << toVisit.size() << endl;
 
-
-        // // cout << terminals[currAirport]->getIATA() << " <- Curr : dest -> " << dest->getIATA() << endl;
-        // cout << startStr << " source and dest > " << destStr << endl;
         if (terminals[currAirport] == dest) {
             auto currDist = terminals[dest_idx]->getIATA();
             if (distance[currDist] == INT_MAX) {
@@ -94,7 +78,6 @@ pair<vector<Airport*>, float> Dijkstras(AdjList& graph, Airport* start, Airport*
                 for (auto& curr : currTermFlights) {
                     // cout << curr->getSource() << " source and dest > " << curr->getDestination() << endl;
                     if ((curr->getSource() == startStr && curr->getDestination() == destStr) || (curr->getDestination() == startStr && curr->getSource() == destStr)) {
-                        // cout << "here " << currDist << endl;
                         distance[currDist] = curr->getDistance();
                     }
                 }
@@ -117,10 +100,8 @@ pair<vector<Airport*>, float> Dijkstras(AdjList& graph, Airport* start, Airport*
             inIdx++;
         }
 
-        // // cout << "after flights Iteration" << endl;
     }
 
-    // // cout << "after while" << endl;
 
 
     if (terminals[currAirport] != dest) {
@@ -128,7 +109,6 @@ pair<vector<Airport*>, float> Dijkstras(AdjList& graph, Airport* start, Airport*
     }
 
 
-    // // cout << "before stack" << endl;
 
     stack<Airport*> tmp;
     while (terminals[currAirport] != start) {
@@ -137,9 +117,7 @@ pair<vector<Airport*>, float> Dijkstras(AdjList& graph, Airport* start, Airport*
         currAirport = previous[currAirport];
     }
 
-    // // cout << "after stack" << endl;
 
-    // // cout << "before path" << endl;
 
     vector<Airport*> path;
     while (!tmp.empty()) {
@@ -149,7 +127,7 @@ pair<vector<Airport*>, float> Dijkstras(AdjList& graph, Airport* start, Airport*
     }
 
     path.push_back(start);
-    // // // cout << "after path" << endl;
+    
     auto destDist = terminals[dest_idx]->getIATA();
     return pair<vector<Airport*>,float>(path, distance[destDist]);
 }
