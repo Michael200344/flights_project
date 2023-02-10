@@ -9,7 +9,7 @@
 
 /**
  * Takes a filename and reads in all the text from the file
- * Newline characters are also just characters in ASCII
+ * Newline characters are also just characters in ASCII 
  * 
  * @param filename The name of the file that will fill the string
  * @return A string containing the whole text of the given file
