@@ -29,7 +29,7 @@ std::string Trim(const std::string & str) {
     return TrimLeft(TrimRight(str));
 }
 
-int SplitString(const std::string & str1, char sep, std::vector<std::string> &fields) {
+int SplitString(const std::string & str1, char sep, std::vector<std::string> &fields) { 
     std::string str = str1;
     std::string::size_type pos;
     while((pos=str.find(sep)) != std::string::npos) {
